@@ -1,0 +1,71 @@
+\begin{thebibliography}{10}
+
+\bibitem{nhc_models}
+Nhc track and intensity models.
+\newblock \url{https://www.nhc.noaa.gov/modelsummary.shtml}.
+\newblock Accessed: 2018-07-04.
+
+\bibitem{de2017deep}
+Manu de~Bezenac, Arthur Pajot, and Patrick Gallinari.
+\newblock Deep learning for physical processes: Incorporating prior scientific
+  knowledge.
+\newblock {\em arXiv preprint arXiv:1711.07970}, 2017.
+
+\bibitem{dee2011era}
+Dick~P Dee, S~M Uppala, AJ~Simmons, Paul Berrisford, P~Poli, S~Kobayashi,
+  U~Andrae, MA~Balmaseda, G~Balsamo, d~P Bauer, et~al.
+\newblock The era-interim reanalysis: Configuration and performance of the data
+  assimilation system.
+\newblock {\em Quarterly Journal of the royal meteorological society},
+  137(656):553--597, 2011.
+
+\bibitem{demaria2005further}
+Mark DeMaria, Michelle Mainelli, Lynn~K Shay, John~A Knaff, and John Kaplan.
+\newblock Further improvements to the statistical hurricane intensity
+  prediction scheme (ships).
+\newblock {\em Weather and Forecasting}, 20(4):531--543, 2005.
+
+\bibitem{knapp2010international}
+Kenneth~R Knapp, Michael~C Kruk, David~H Levinson, Howard~J Diamond, and
+  Charles~J Neumann.
+\newblock The international best track archive for climate stewardship
+  (ibtracs) unifying tropical cyclone data.
+\newblock {\em Bulletin of the American Meteorological Society},
+  91(3):363--376, 2010.
+
+\bibitem{liberge2011prevision}
+Sterenn~Marie Liberge, Sileye Ba, Philippe Lenca, and Ronan Fablet.
+\newblock Pr{\'e}vision de trajectoires de cyclones {\`a} l'aide de for{\^e}ts
+  al{\'e}atoires avec arbres de r{\'e}gression.
+\newblock In {\em Conf{\'e}rence internationale francophone sur l'extraction et
+  la gestion des connaissances}, pages 623--634. Hermann, 2011.
+
+\bibitem{moradi2016sparse}
+Mina Moradi~Kordmahalleh, Mohammad Gorji~Sefidmazgi, and Abdollah Homaifar.
+\newblock A sparse recurrent neural network for trajectory prediction of
+  atlantic hurricanes.
+\newblock In {\em Proceedings of the Genetic and Evolutionary Computation
+  Conference 2016}, pages 957--964. ACM, 2016.
+
+\bibitem{racah2017extremeweather}
+Evan Racah, Christopher Beckham, Tegan Maharaj, Samira~Ebrahimi Kahou,
+  Mr~Prabhat, and Chris Pal.
+\newblock Extremeweather: A large-scale climate dataset for semi-supervised
+  detection, localization, and understanding of extreme weather events.
+\newblock In {\em Advances in Neural Information Processing Systems}, pages
+  3402--3413, 2017.
+
+\bibitem{simonyan2014very}
+Karen Simonyan and Andrew Zisserman.
+\newblock Very deep convolutional networks for large-scale image recognition.
+\newblock {\em arXiv preprint arXiv:1409.1556}, 2014.
+
+\bibitem{xingjian2015convolutional}
+SHI Xingjian, Zhourong Chen, Hao Wang, Dit-Yan Yeung, Wai-Kin Wong, and
+  Wang-chun Woo.
+\newblock Convolutional lstm network: A machine learning approach for
+  precipitation nowcasting.
+\newblock In {\em Advances in neural information processing systems}, pages
+  802--810, 2015.
+
+\end{thebibliography}

@@ -1,0 +1,138 @@
+%% Copyright (C) 2008 Johan Oudinet <oudinet@lri.fr>
+%%  
+%% Permission is granted to make and distribute verbatim copies of
+%% this manual provided the copyright notice and this permission notice
+%% are preserved on all copies.
+%%  
+%% Permission is granted to process this file through TeX and print the
+%% results, provided the printed document carries copying permission
+%% notice identical to this one except for the removal of this paragraph
+%% (this paragraph not being relevant to the printed manual).
+%%  
+%% Permission is granted to copy and distribute modified versions of this
+%% manual under the conditions for verbatim copying, provided that the
+%% entire resulting derived work is distributed under the terms of a 
+%% permission notice identical to this one.
+%%  
+%% Permission is granted to copy and distribute translations of this manual
+%% into another language, under the above conditions for modified versions,
+%% except that this permission notice may be stated in a translation
+%% approved by the Free Software Foundation
+%%  
+\chapter{Theoratical insights}
+
+\section{Tensor Data}
+
+
+\section{Convolutional Neural Network}
+Convolutional neural network(CNN) has been widely adopted as a powerful tool for pattern recognition tasks with images or image-like data in various previous studies.(cite) 
+In the architecture of CNN, the basic components are convolutional layers, maxpooling layers, activation layers and fully connected layers. The convolutional layers perform convolutional operations between kernels and input images(for intermidiate feature map). A convolutional layer contains K kernels(filters) with the size (i,j,c), where i, j represent the width and height of the kernel and c represent the number of input channels, after the convlutional operation K feature maps serve as ouput and will be inputs of the next layers, deal with spatial-correlations...
+
+With the evolution of CNN, researchers keep looking for better CNN architecture which has better precision and more computential efficiency. Since Alex net(2012), more and more attempts... 
+
+A typical CNN architecture known as VGG applies alternatively convolutional layers (use only 3x3 size kernel) and maxpooling layers (use only 2x2 size kernel) through the whole network, and put several fully connected layers at the end of the network to generate output. VGG often serves as a guideline to design architecture of the nerual network. The advantages of adopting VGG is that the most important hyper-parameters for designing CNN becomes the depth of the network without worrying about other hyper-parameters like kernel size. In this paper we will use VGG as a guideline to design our CNN for the task of storm track forecasting.
+
+
+\section{The Fused Deep Neural Network }
+
+
+
+
+\chapter{Method}
+
+\section{Data Description}
+The raw storm track data used in this study is composed of more than 3000 extra-tropical and tropical storm tracks since 1979 extracted from the NOAA database IBTrACS\cite{knapp2010international}, see Figure 2. The tracks are defined by the 6-hourly center locations (latitude and longitude). They come from both hemispheres and the number of records per storm varies from 2 to 120 time steps. In total, the database counts more than 90 000 time steps. 
+
+The trajectory of a storm depends on large scale atmospheric flows. Thus, we extracted the wind fields of the neighborhood of the storm at every time step t from the ERA-interim reanalysis database \cite{dee2011era}. Specifically, we extracted the u-wind and v-wind fields on a $25x25$ degree grid centered on the current storm location, at 3 atmospheric pressure levels (700 hPa, 500 hPa and 225 hPa). Because we wanted to capture the dynamics, we also extracted the wind fields measured at $t - 6h$ at the same locations.
+
+The choice of the 3 pressure levels was driven by statistical forecast models \cite{demaria2005further}. The reason why we focused on the wind parameter is that we applied a sparse feature selection technique (Automatic Relevance Determination, based on linear regression) over all available reanalysis fields, which highlighted the usefullness of wind.
+
+
+\section{CNN Configuration for Wind Fields and Geopotential Fields}
+Convolutional neural networks (CNN) are suited for non-linear learning with image-like data. They have already shown their efficiency in the climate informatics field \cite{xingjian2015convolutional, de2017deep,racah2017extremeweather}. The centered wind fields at different pressure levels at $t$ and $t-6h$ can be seen as 12 images of size 25x25. We used as a guideline a typical CNN architecture alternating convolutional layers and maxpooling layers and added several fully connected layers at the end of the network \cite{simonyan2014very}. To measure the improvements brought by increasing the CNN depth, we have designed 4 CNNs with the same number of neurons and varying depths. We observed very unobvious improvement on the result, so we chose the most shallow CNN with only 1 convolutional layer for computational reasons.
+
+
+\begin{table}[]
+	\begin{center}
+		\caption{\textbf{ConvNet configurations}(shown in columns). The depth of the configurations increases from left(A) to the right(D), as more layers are added. The convolutional layer parametres are denoted as "conv(kernel size)-(number of output channels)". The ReLU activation layer and Batch normalization layers are not shown in figure }
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			\multicolumn{4}{|c|}{ConvNet Configurations}                                                                                                                                                                                                                                                                                                                         \\ \hline
+			A                                                                   & B                                                                              & C                                                                                          & D                                                                                                                \\ \hline
+			7 layers                                                            & 8 layers                                                                       & 9 layers                                                                                   & 10 layers                                                                                                        \\ \hline
+			\multicolumn{4}{|c|}{input (25*25, 12 channels image)}                                                                                                                                                                                                                                                                                                               \\ \hline
+			\begin{tabular}[t]{@{}c@{}}conv4-32\\ maxpool\end{tabular} & \begin{tabular}[t]{@{}c@{}}conv4-32\\ conv3-32\\ maxpool\end{tabular} & \begin{tabular}[t]{@{}c@{}}conv4-64\\ conv3-64\\ maxpool\\ conv3-256\end{tabular} & \begin{tabular}[t]{@{}c@{}}conv4-64\\ conv3-64\\ maxpool\\ conv3-128\\ conv3-256\\ maxpool\end{tabular} \\ \hline
+			\multicolumn{4}{|c|}{FC-576}                                                                                                                                                                                                                                                                                                                                         \\ \hline
+			\multicolumn{4}{|c|}{FC-128}                                                                                                                                                                                                                                                                                                                                         \\ \hline
+			\multicolumn{4}{|c|}{FC-64}                                                                                                                                                                                                                                                                                                                                          \\ \hline
+			\multicolumn{4}{|c|}{FC-8}                                                                                                                                                                                                                                                                                                                                           \\ \hline
+			\multicolumn{4}{|c|}{FC-8}                                                                                                                                                                                                                                                                                                                                           \\ \hline
+			\multicolumn{4}{|c|}{FC-2}                                                                                                                                                                                                                                                                                                                                          \\ \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\begin{table}[]
+	\centering
+	\caption{Number of parameters (in millions)}
+	\begin{tabular}{|l|c|c|c|c|}
+		\hline
+		Network              & A    & B    & C    & D    \\ \hline
+		Number of parameters & 2.27 & 2.33 & 2.75 & 2.67 \\ \hline
+	\end{tabular}
+\end{table}
+
+\section{Neural Network for Past Tracks}
+Another important source of information is the previous displacements
+%($d_{lat},d_{long}$
+(latitude and longitude
+for $t-12h$ and $t-6h$). We designed a small neural network (two small fully connected layers) able to learn the future track from this past track.
+
+\section{Fusion Architecture for All Sources of Data}
+
+Because of the different nature of the wind field image and of the past track data, it is not straightforward to mix them as a common input to a bigger network. Instead, we first train separately the wind field CNN and the small past track neural network (NN) previously mentioned, and then we fuse their two last layers, and re-train them together (see Figure \ref{fig:schema}). %\textbf{(include citation on similar fused network?)}
+
+\chapter{Experiments and Result Analysis}
+\section{Data and Evaluation Settings}
+
+\section{Training Details and Results}
+The storms were randomly separated in 3 sets as follows: train (60\%) / valid (20\%) / test (20\%).
+%= 60\%-20\%-20\%.
+Then, within each set, all time instants were treated independently.
+As a loss function (quantity to optimise), we used the mean square error (MSE) in kilometers between the forecast and the true storm location at $t+6h$. We added an L2 penalty on the weights of the model (\emph{coef.}~$= 0.01$). The training was performed by the Adam optimizer.
+%based on backpropagation. 
+
+Our implementation uses PyTorch 4.0.  The training and testing took less than 1 hour on 4 TitanX GPUs with data parallelism \cite{krizhevsky2014one}.
+
+
+
+
+\begin{figure}
+	\begin{center}
+		\epsfxsize=0.50\hsize \epsfbox{figs/MAE_all_6hforecast_paper.pdf}
+	\end{center}
+	\caption{6h-forecast results on the test set (storms coming from all oceanic basins), in distance between predicted and real location. Baseline = previous displacement (going straight).}
+	\label{fig:boxplots}
+\end{figure}
+
+Figure \ref{fig:boxplots} shows the 6h-forecast results on the test set in absolute distance error. We define the baseline prediction as equal to the last displacement (from $t-6h$ to $t$). We can see the improvement of fusing networks (mean error $\bar{e}=32.9km$) with respect to the wind field CNN alone ($\bar{e}=40.7km$) or the track neural network alone ($\bar{e}=35km$).
+We have plotted in Figure \ref{fig:track} an example of 6h-forecasts on one storm track for the baseline and for our prediction (fusion networks). Our forecast predicts well, even in the case of change of direction or speed.
+
+
+\begin{figure}
+	\begin{center}
+		\epsfxsize=0.50\hsize \epsfbox{figs/storm_track3_new2.pdf}
+	\end{center}
+	\caption{Example of 6h-forecasts on one storm track. The baseline prediction is equal to the last 6h-displacement (going straight).}
+	\label{fig:track}
+\end{figure}
+
+
+If these results are promising, some more long-term predictions are needed for a practical use. Moreover, current forecast models do not provide less than 24h-forecasts, which prevents us from comparing the results. With respect to the existing machine learning studies predicting 6h-forecasts \cite{liberge2011prevision,moradi2016sparse}, we tend to perform better (error larger than 60km for both studies) and on a larger/more diverse dataset. Moreover, if we only look at hurricane time steps (without depressions), our mean prediction error drops to 25.8km. Depressions seem to be more difficult to predict: an explanation can be that they are smaller and more subject to local perturbations.
+
+\section{Result Analysis}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "rapportM2R"
+%%% End: 

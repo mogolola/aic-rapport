@@ -1,0 +1,47 @@
+%% Copyright (C) 2008 Johan Oudinet <oudinet@lri.fr>
+%%  
+%% Permission is granted to make and distribute verbatim copies of
+%% this manual provided the copyright notice and this permission notice
+%% are preserved on all copies.
+%%  
+%% Permission is granted to process this file through TeX and print the
+%% results, provided the printed document carries copying permission
+%% notice identical to this one except for the removal of this paragraph
+%% (this paragraph not being relevant to the printed manual).
+%%  
+%% Permission is granted to copy and distribute modified versions of this
+%% manual under the conditions for verbatim copying, provided that the
+%% entire resulting derived work is distributed under the terms of a 
+%% permission notice identical to this one.
+%%  
+%% Permission is granted to copy and distribute translations of this manual
+%% into another language, under the above conditions for modified versions,
+%% except that this permission notice may be stated in a translation
+%% approved by the Free Software Foundation
+%%  
+\chapter{Description of Internship Subject}
+\label{sec:chapter2}
+
+\section{Hurricane Trajectory Forecasting}
+\label{sec:chapter2_1}
+Cyclones, hurricanes or typhoons are words desigining for the same phenomena: a rare and complex event characterized by strong winds surronding a low pressure area. Hurricanes is one of the most severe natural diaster that cost tremendous damage and death in each year. An average hurrican can release as much energy in a day as explosion of half a million small atomic bombs. In 20th century, over 45000 people were killed by hurricanes. In 2005, hurricane Katrina has costed as much as 125 billions USD worth of damage. That is why the forecast of hurricanes trajectory is so important, if we know when and where the hurricanes is going to make landfall, people live in that area will be alarmed and get some time to protect their goods and evacuate. However this is difficult, hurricane movements can be very unpredictable. Their evolution depends on many factors at different scales and altitudes, which leads to difficulties in their modelling. Also, since the 1990s, storms have been more numerous, leading to both more representative and more consistent error statistics. 
+
+\subsection{State-of-art}
+Today, the forecasts (track and intensity) are provided by a numerous number of guidance models \cite{nhc_models}. The original best model was statistical model based on historical relationships between storm behavior and various other parameters and it was the major forecasting model until 1980's \cite{demaria2005further}. Today it is mostly used for testing and comparing new models. Dynamical models solve the physical equations governing motions in the atmosphere. If they can have quite precise results, they are computationally demanding. If the computation last for days, it wouldn't make sense to make prediction since the prediction will already be out of date. The statistical model, in contrast, does not demand high computational cost, but are less accurate than dynamic models. Current national forecasts are typically driven by consensus methods able to combine different dynamical models.
+
+
+\subsection{Relevent Studies}
+The hurricane statistical forecasting models perform poorly with respect to dynamical models, even if the database made of past hurricane is constantly growing. The machine learning methods, able for example to capture non-linearity and complex relations, have only been scarcely tested. However, they have recently shown their efficacy in a various number of forecasting tasks. Particularly, convolutional neural networks (CNNs) have raised attention as they are suited for large imaging data.A convolutional LSTM model has been used for precipitation forecast in a promising study \cite{xingjian2015convolutional}. Another recent study predicts the evolution of sea surface temperature maps by combining CNNs with physical knowledge \cite{de2017deep}. The CNNs have also been used for the detection of extreme weather like hurricanes from meteorological variables patches. \cite{racah2017extremeweather}.
+To our knowledge, only two preliminary studies have tackled the hurricane forecast tracking using machine learning: the first one uses random forests on local reanalysis histograms \cite{liberge2011prevision}, however the mean error of 6h-forecasts seem to indicate poor results (more than 60km). The second uses a sparse recurrent neural network from trajectory data \cite{moradi2016sparse}, but it was tested on only 4 hurricanes and seem aslo to give large distance errors (mean 6h-forecast error is 72km).
+
+
+
+\section{Internship Subject}
+\label{sec:subject}
+In this work, we propose a neural network architecture taking into account past trajectory data and reanalysis atmospheric wind fields and geopotential fields images. This fused network estimates the longitude and laritude 24h-forecast of hurricanes and depressions from both hemispheres and different basins (more than 3000 storms since 1979)....
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "rapportM2R"
+%%% End: 
