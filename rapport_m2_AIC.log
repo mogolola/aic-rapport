@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.7.21)  24 JUL 2018 10:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.7.21)  24 JUL 2018 13:56
 entering extended mode
 **./rapport_m2_AIC.tex
 (rapport_m2_AIC.tex
@@ -916,53 +916,6 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 \ALC@tlm=\skip194
 \algorithmicindent=\skip256
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
-Package: babel 2018/06/05 3.22 The Babel package
-
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\switch.def"
-File: switch.def 2018/06/05 3.22 Babel switching mechanism
-)
-*************************************
-* Local config file bblopts.cfg used
-*
-("C:\Program Files\MiKTeX 2.9\tex\latex\arabi\bblopts.cfg"
-File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
- babel
-)
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel-french\french.ldf"
-Language: french 2018/04/12 v3.4d French support from the babel system
-
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
-File: babel.def 2018/06/05 3.22 Babel common definitions
-\babel@savecnt=\count192
-\U@D=\dimen276
-
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\txtbabel.def")
-\bbl@dirlevel=\count193
-)
-\l@acadian = a dialect from \language\l@french 
-\FB@nonchar=\count194
-Package babel Info: Making : an active character on input line 415.
-Package babel Info: Making ; an active character on input line 416.
-Package babel Info: Making ! an active character on input line 417.
-Package babel Info: Making ? an active character on input line 418.
-\FBguill@level=\count266
-\FB@everypar=\toks52
-\FB@Mht=\dimen277
-\mc@charclass=\count267
-\mc@charfam=\count268
-\mc@charslot=\count269
-\std@mcc=\count270
-\dec@mcc=\count271
-\c@FBcaption@count=\count272
-\listindentFB=\skip257
-\descindentFB=\skip258
-\labelwidthFB=\skip259
-\leftmarginFB=\skip260
-\parindentFFN=\dimen278
-\FBfnindent=\skip261
-))
-("C:\Program Files\MiKTeX 2.9\tex\latex\carlisle\scalefnt.sty")
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
 libraryshapes.code.tex"
 File: tikzlibraryshapes.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
@@ -1042,7 +995,7 @@ File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\pgflibraryarrows.code.t
 ex"
 File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
-\arrowsize=\dimen279
+\arrowsize=\dimen276
 ))
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
 libraryautomata.code.tex"
@@ -1055,28 +1008,28 @@ File: tikzlibrarybackgrounds.code.tex 2013/07/18 v3.0.1a (rcs-revision 1.3)
 \pgf@layerboxsaved@background=\box66
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\wrapfig\wrapfig.sty"
-\wrapoverhang=\dimen280
-\WF@size=\dimen281
-\c@WF@wrappedlines=\count273
+\wrapoverhang=\dimen277
+\WF@size=\dimen278
+\c@WF@wrappedlines=\count192
 \WF@box=\box67
-\WF@everypar=\toks53
+\WF@everypar=\toks52
 Package: wrapfig 2003/01/31  v 3.6
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\microtype.sty"
 Package: microtype 2018/01/14 v2.7a Micro-typographical refinements (RS)
-\MT@toks=\toks54
-\MT@count=\count274
+\MT@toks=\toks53
+\MT@count=\count193
 LaTeX Info: Redefining \textls on input line 793.
-\MT@outer@kern=\dimen282
+\MT@outer@kern=\dimen279
 LaTeX Info: Redefining \textmicrotypecontext on input line 1339.
-\MT@listname@count=\count275
+\MT@listname@count=\count194
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\microtype-pdftex.def"
 File: microtype-pdftex.def 2018/01/14 v2.7a Definitions specific to pdftex (RS)
 
 LaTeX Info: Redefining \lsstyle on input line 913.
 LaTeX Info: Redefining \lslig on input line 913.
-\MT@outer@space=\skip262
+\MT@outer@space=\skip257
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 
@@ -1085,23 +1038,23 @@ File: microtype.cfg 2018/01/14 v2.7a microtype main configuration file (RS)
 ))
 ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\multicol.sty"
 Package: multicol 2018/04/20 v1.8s multicolumn formatting (FMi)
-\c@tracingmulticols=\count276
+\c@tracingmulticols=\count266
 \mult@box=\box68
-\multicol@leftmargin=\dimen283
-\c@unbalance=\count277
-\c@collectmore=\count278
-\doublecol@number=\count279
-\multicoltolerance=\count280
-\multicolpretolerance=\count281
-\full@width=\dimen284
-\page@free=\dimen285
-\premulticols=\dimen286
-\postmulticols=\dimen287
-\multicolsep=\skip263
-\multicolbaselineskip=\skip264
+\multicol@leftmargin=\dimen280
+\c@unbalance=\count267
+\c@collectmore=\count268
+\doublecol@number=\count269
+\multicoltolerance=\count270
+\multicolpretolerance=\count271
+\full@width=\dimen281
+\page@free=\dimen282
+\premulticols=\dimen283
+\postmulticols=\dimen284
+\multicolsep=\skip258
+\multicolbaselineskip=\skip259
 \partial@page=\box69
 \last@line=\box70
-\maxbalancingoverflow=\dimen288
+\maxbalancingoverflow=\dimen285
 \mult@rightbox=\box71
 \mult@grightbox=\box72
 \mult@gfirstbox=\box73
@@ -1123,19 +1076,16 @@ Package: multicol 2018/04/20 v1.8s multicolumn formatting (FMi)
 \@tempa=\box89
 \@tempa=\box90
 \@tempa=\box91
-\c@columnbadness=\count282
-\c@finalcolumnbadness=\count283
-\last@try=\dimen289
-\multicolovershoot=\dimen290
-\multicolundershoot=\dimen291
+\c@columnbadness=\count272
+\c@finalcolumnbadness=\count273
+\last@try=\dimen286
+\multicolovershoot=\dimen287
+\multicolundershoot=\dimen288
 \mult@nat@firstbox=\box92
 \colbreak@box=\box93
-\mc@col@check@num=\count284
-) (french_stuff.tex) (rapport_m2_AIC.aux
-
-LaTeX Warning: Label `sec:subject' multiply defined.
-
+\mc@col@check@num=\count274
 )
+(rapport_m2_AIC.aux)
 \openout1 = `rapport_m2_AIC.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
@@ -1152,19 +1102,20 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
 LaTeX Font Info:    ... okay on input line 63.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 63.
 LaTeX Font Info:    ... okay on input line 63.
- ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count285
-\scratchdimen=\dimen292
+\scratchcounter=\count275
+\scratchdimen=\dimen289
 \scratchbox=\box94
-\nofMPsegments=\count286
-\nofMParguments=\count287
-\everyMPshowfont=\toks55
-\MPscratchCnt=\count288
-\MPscratchDim=\dimen293
-\MPnumerator=\count289
-\makeMPintoPDFobject=\count290
-\everyMPtoPDFconversion=\toks56
+\nofMPsegments=\count276
+\nofMParguments=\count277
+\everyMPshowfont=\toks54
+\MPscratchCnt=\count278
+\MPscratchDim=\dimen290
+\MPnumerator=\count279
+\makeMPintoPDFobject=\count280
+\everyMPtoPDFconversion=\toks55
 ) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -1188,7 +1139,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count291
+\c@section@level=\count281
 )
 Redoing nameref's sectioning
 Redoing nameref's label
@@ -1200,21 +1151,6 @@ LaTeX Info: Redefining \nameref on input line 63.
 \@outlinefile=\write6
 \openout6 = `rapport_m2_AIC.out'.
 
-LaTeX Info: Redefining \degres on input line 63.
-LaTeX Info: Redefining \dots on input line 63.
-Package french.ldf Info: Setting StandardEnumerateEnv=true for
-(french.ldf)             compatibility with enumerate package,
-(french.ldf)             reported on input line 63.
-LaTeX Info: Redefining \up on input line 63.
-
-
-Package french.ldf Warning: OT1 encoding should not be used for French.
-(french.ldf)                Add \usepackage[T1]{fontenc} to the preamble
-(french.ldf)                of your document; reported on input line 63.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\hhline.sty"
-Package: hhline 2014/10/28 v2.03 Table rule package (DPC)
-)
 LaTeX Info: Redefining \microtypecontext on input line 63.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
@@ -1230,17 +1166,17 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-<logos/upsay.pdf, id=98, 280.04625pt x 94.3525pt>
+<logos/upsay.pdf, id=102, 280.04625pt x 94.3525pt>
 File: logos/upsay.pdf Graphic file (type pdf)
 <use logos/upsay.pdf>
 Package pdftex.def Info: logos/upsay.pdf  used on input line 72.
 (pdftex.def)             Requested size: 168.90076pt x 56.9055pt.
-<logos/ups.png, id=99, 318.9516pt x 170.0754pt>
+<logos/ups.png, id=103, 318.9516pt x 170.0754pt>
 File: logos/ups.png Graphic file (type png)
 <use logos/ups.png>
 Package pdftex.def Info: logos/ups.png  used on input line 73.
 (pdftex.def)             Requested size: 106.71439pt x 56.9055pt.
-<logos/limsi.png, id=101, 285.065pt x 148.555pt>
+<logos/limsi.png, id=105, 285.065pt x 148.555pt>
 File: logos/limsi.png Graphic file (type png)
 <use logos/limsi.png>
 Package pdftex.def Info: logos/limsi.png  used on input line 81.
@@ -1261,7 +1197,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-msb.cfg"
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-<logos/lri.png, id=102, 88.33pt x 85.31876pt>
+<logos/lri.png, id=106, 88.33pt x 85.31876pt>
 File: logos/lri.png Graphic file (type png)
 <use logos/lri.png>
 Package pdftex.def Info: logos/lri.png  used on input line 86.
@@ -1325,13 +1261,13 @@ Package xcolor Warning: Incompatible color definition on input line 22.
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 41.
+Package xcolor Warning: Incompatible color definition on input line 45.
 
 
-Package xcolor Warning: Incompatible color definition on input line 41.
+Package xcolor Warning: Incompatible color definition on input line 45.
 
 
-LaTeX Warning: Reference `fig:schema' on page 5 undefined on input line 93.
+LaTeX Warning: Reference `fig:schema' on page 5 undefined on input line 97.
 
 [5
 
@@ -1340,35 +1276,35 @@ LaTeX Warning: Reference `fig:schema' on page 5 undefined on input line 93.
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.95 \chapter
+l.99 \chapter
              {Experiments and Result Analysis}pdfTeX warning (ext4): destinatio
 n with the same identifier (name{table.4.2}) has been already used, duplicate i
 gnored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.95 \chapter
+l.99 \chapter
              {Experiments and Result Analysis}]
 
-Package xcolor Warning: Incompatible color definition on input line 95.
+Package xcolor Warning: Incompatible color definition on input line 99.
 
 
-Package xcolor Warning: Incompatible color definition on input line 95.
+Package xcolor Warning: Incompatible color definition on input line 99.
 
 
 LaTeX Warning: Citation `krizhevsky2014one' on page 7 undefined on input line 1
-05.
+09.
 
-<figs/MAE_all_6hforecast_paper.pdf, id=218, 675.36508pt x 428.4559pt>
+<figs/MAE_all_6hforecast_paper.pdf, id=223, 675.36508pt x 428.4559pt>
 File: figs/MAE_all_6hforecast_paper.pdf Graphic file (type pdf)
 <use figs/MAE_all_6hforecast_paper.pdf>
 Package pdftex.def Info: figs/MAE_all_6hforecast_paper.pdf  used on input line 
-112.
+116.
 (pdftex.def)             Requested size: 213.39566pt x 135.37619pt.
-<figs/storm_track3_new2.pdf, id=221, 358.88364pt x 435.28093pt>
+<figs/storm_track3_new2.pdf, id=226, 358.88364pt x 435.28093pt>
 File: figs/storm_track3_new2.pdf Graphic file (type pdf)
 <use figs/storm_track3_new2.pdf>
-Package pdftex.def Info: figs/storm_track3_new2.pdf  used on input line 124.
+Package pdftex.def Info: figs/storm_track3_new2.pdf  used on input line 128.
 (pdftex.def)             Requested size: 213.39566pt x 258.82599pt.
 ) (conclu.tex [7
 
@@ -1421,7 +1357,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 175.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 175.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 175.
 Package rerunfilecheck Info: File `rapport_m2_AIC.out' has not changed.
-(rerunfilecheck)             Checksum: 261A0ED33A5F75ECADE6F25EF0D872D7;1564.
+(rerunfilecheck)             Checksum: 4A8E45E2F5FCA13FF6BC478F1D492075;1614.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1429,19 +1365,16 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 175.
  ) 
 Here is how much of TeX's memory you used:
- 25845 strings out of 492973
- 479838 string characters out of 3135941
- 656977 words of memory out of 3000000
- 29104 multiletter control sequences out of 15000+200000
+ 24633 strings out of 492973
+ 461954 string characters out of 3135941
+ 626739 words of memory out of 3000000
+ 27920 multiletter control sequences out of 15000+200000
  13698 words of font info for 86 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 52i,14n,67p,1138b,466s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 52i,14n,67p,1123b,407s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiK
@@ -1452,9 +1385,9 @@ c/amsfonts/cm/cmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
 onts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
 cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.p
 fb>
-Output written on rapport_m2_AIC.pdf (14 pages, 363951 bytes).
+Output written on rapport_m2_AIC.pdf (14 pages, 365750 bytes).
 PDF statistics:
- 853 PDF objects out of 1000 (max. 8388607)
- 56 named destinations out of 1000 (max. 500000)
- 20195 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 858 PDF objects out of 1000 (max. 8388607)
+ 57 named destinations out of 1000 (max. 500000)
+ 20203 words of extra memory for PDF output out of 20736 (max. 10000000)
 
