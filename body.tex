@@ -19,17 +19,11 @@
 %% except that this permission notice may be stated in a translation
 %% approved by the Free Software Foundation
 %%  
-\chapter{Theoratical insights}
-
-\section{Domaine Knowledge}
-\textbf{some domaine knowledge about hurricanes and forecasts...}
-
-\section{Tensor Data}
-\textbf{somewords on its temporal and spatial dependencies...}
+\chapter{Background}
 
 \section{Convolutional Neural Network}
 Convolutional neural network(CNN) has been widely adopted as a powerful tool for pattern recognition tasks with images or image-like data in various previous studies.(cite) 
-In the architecture of CNN, the basic components are convolutional layers, maxpooling layers, activation layers and fully connected layers. The convolutional layers perform convolutional operations between kernels and input images(for intermidiate feature map). A convolutional layer contains K kernels(filters) with the size (i,j,c), where i, j represent the width and height of the kernel and c represent the number of input channels, after the convlutional operation K feature maps serve as ouput and will be inputs of the next layers, deal with spatial-correlations...
+In the architecture of CNN, the basic components are convolutional layers, pooling layers, activation layers and fully connected layers. The convolutional layers perform convolutional operations between kernels and input images(for intermidiate feature map). A convolutional layer contains K kernels(filters) with the size (i,j,c), where i, j represent the width and height of the kernel and c represent the number of input channels, after the convlutional operation K feature maps serve as ouput and will be inputs of the next layers, deal with spatial-correlations...
 
 With the evolution of CNN, researchers keep looking for better CNN architecture which has better precision and more computential efficiency. Since Alex net(2012), more and more attempts... 
 
@@ -37,7 +31,10 @@ A typical CNN architecture known as VGG applies alternatively convolutional laye
 
 \textbf{a throughout introduction to CNN and pattern recognition with CNN}
 
-\section{The Fused Deep Neural Network }
+
+\section{CNN in climate science}
+
+\section{Fusion architecture}
 \textbf{Fusion networks....}
 
 
@@ -49,11 +46,11 @@ The raw storm track data used in this study is composed of more than 3000 extra-
 
 The trajectory of a storm depends on large scale atmospheric flows. Thus, we extracted the wind fields of the neighborhood of the storm at every time step t from the ERA-interim reanalysis database \cite{dee2011era}. Specifically, we extracted the u-wind and v-wind fields on a $25x25$ degree grid centered on the current storm location, at 3 atmospheric pressure levels (700 hPa, 500 hPa and 225 hPa). Because we wanted to capture the dynamics, we also extracted the wind fields measured at $t - 6h$ at the same locations.
 
-The choice of the 3 pressure levels was driven by statistical forecast models \cite{demaria2005further}. The reason why we focused on the wind parameter is that we applied a sparse feature selection technique (Automatic Relevance Determination, based on linear regression) over all available reanalysis fields, which highlighted the usefullness of wind.
+The choice of the 3 pressure levels was driven by statistical forecast models \cite{demaria2005further}. The reason why we focused on the wind parameter is that we applied a sparse feature selection technique (Automatic Relevance Determination, based on linear regression) over all available reanalysis fields, which highlighted the usefulness of wind.
 
 
 \section{CNN Configuration for Wind Fields and Geopotential Fields}
-Convolutional neural networks (CNN) are suited for non-linear learning with image-like data. They have already shown their efficiency in the climate informatics field \cite{xingjian2015convolutional, de2017deep,racah2017extremeweather}. The centered wind fields at different pressure levels at $t$ and $t-6h$ can be seen as 12 images of size 25x25. We used as a guideline a typical CNN architecture alternating convolutional layers and maxpooling layers and added several fully connected layers at the end of the network \cite{simonyan2014very}. To measure the improvements brought by increasing the CNN depth, we have designed 4 CNNs with the same number of neurons and varying depths. We observed very unobvious improvement on the result, so we chose the most shallow CNN with only 1 convolutional layer for computational reasons.
+Convolutional neural networks (CNN) are suited for non-linear learning with image-like data. They have already shown their efficiency in the climate informatics field \cite{xingjian2015convolutional, de2017deep,racah2017extremeweather}. The centered wind fields at different pressure levels at $t$ and $t-6h$ can be seen as 12 images of size 25x25. We used as a guideline a typical CNN architecture alternating convolutional layers and max-pooling layers and added several fully connected layers at the end of the network \cite{simonyan2014very}. To measure the improvements brought by increasing the CNN depth, we have designed 4 CNNs with the same number of neurons and varying depths. 
 
 
 \begin{table}[]

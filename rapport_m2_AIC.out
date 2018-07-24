@@ -6,19 +6,18 @@
 \BOOKMARK [0][-]{chapter.2}{Description of Internship Subject}{}% 6
 \BOOKMARK [1][-]{section.2.1}{Hurricane Trajectory Forecasting}{chapter.2}% 7
 \BOOKMARK [1][-]{section.2.2}{Internship Subject}{chapter.2}% 8
-\BOOKMARK [0][-]{chapter.3}{Theoratical insights}{}% 9
-\BOOKMARK [1][-]{section.3.1}{Domaine Knowledge}{chapter.3}% 10
-\BOOKMARK [1][-]{section.3.2}{Tensor Data}{chapter.3}% 11
-\BOOKMARK [1][-]{section.3.3}{Convolutional Neural Network}{chapter.3}% 12
-\BOOKMARK [1][-]{section.3.4}{The Fused Deep Neural Network }{chapter.3}% 13
-\BOOKMARK [0][-]{chapter.4}{Method}{}% 14
-\BOOKMARK [1][-]{section.4.1}{Data Description}{chapter.4}% 15
-\BOOKMARK [1][-]{section.4.2}{CNN Configuration for Wind Fields and Geopotential Fields}{chapter.4}% 16
-\BOOKMARK [1][-]{section.4.3}{Neural Network for Past Tracks}{chapter.4}% 17
-\BOOKMARK [1][-]{section.4.4}{Fusion Architecture for All Sources of Data}{chapter.4}% 18
-\BOOKMARK [0][-]{chapter.5}{Experiments and Result Analysis}{}% 19
-\BOOKMARK [1][-]{section.5.1}{Data and Evaluation Settings}{chapter.5}% 20
-\BOOKMARK [1][-]{section.5.2}{Training Details and Results}{chapter.5}% 21
-\BOOKMARK [1][-]{section.5.3}{Result Analysis}{chapter.5}% 22
-\BOOKMARK [0][-]{chapter.6}{Conclusion and Discussion}{}% 23
-\BOOKMARK [0][-]{chapter*.7}{Bibliography}{}% 24
+\BOOKMARK [0][-]{chapter.3}{Background}{}% 9
+\BOOKMARK [1][-]{section.3.1}{Convolutional Neural Network}{chapter.3}% 10
+\BOOKMARK [1][-]{section.3.2}{CNN in climate science}{chapter.3}% 11
+\BOOKMARK [1][-]{section.3.3}{Fusion architecture}{chapter.3}% 12
+\BOOKMARK [0][-]{chapter.4}{Method}{}% 13
+\BOOKMARK [1][-]{section.4.1}{Data Description}{chapter.4}% 14
+\BOOKMARK [1][-]{section.4.2}{CNN Configuration for Wind Fields and Geopotential Fields}{chapter.4}% 15
+\BOOKMARK [1][-]{section.4.3}{Neural Network for Past Tracks}{chapter.4}% 16
+\BOOKMARK [1][-]{section.4.4}{Fusion Architecture for All Sources of Data}{chapter.4}% 17
+\BOOKMARK [0][-]{chapter.5}{Experiments and Result Analysis}{}% 18
+\BOOKMARK [1][-]{section.5.1}{Data and Evaluation Settings}{chapter.5}% 19
+\BOOKMARK [1][-]{section.5.2}{Training Details and Results}{chapter.5}% 20
+\BOOKMARK [1][-]{section.5.3}{Result Analysis}{chapter.5}% 21
+\BOOKMARK [0][-]{chapter.6}{Conclusion and Discussion}{}% 22
+\BOOKMARK [0][-]{chapter*.7}{Bibliography}{}% 23
