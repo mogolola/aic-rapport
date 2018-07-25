@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.7.21)  24 JUL 2018 14:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.7.21)  25 JUL 2018 16:45
 entering extended mode
 **./rapport_m2_AIC.tex
 (rapport_m2_AIC.tex
@@ -1166,17 +1166,17 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-<logos/upsay.pdf, id=102, 280.04625pt x 94.3525pt>
+<logos/upsay.pdf, id=98, 280.04625pt x 94.3525pt>
 File: logos/upsay.pdf Graphic file (type pdf)
 <use logos/upsay.pdf>
 Package pdftex.def Info: logos/upsay.pdf  used on input line 72.
 (pdftex.def)             Requested size: 168.90076pt x 56.9055pt.
-<logos/ups.png, id=103, 318.9516pt x 170.0754pt>
+<logos/ups.png, id=99, 318.9516pt x 170.0754pt>
 File: logos/ups.png Graphic file (type png)
 <use logos/ups.png>
 Package pdftex.def Info: logos/ups.png  used on input line 73.
 (pdftex.def)             Requested size: 106.71439pt x 56.9055pt.
-<logos/limsi.png, id=105, 285.065pt x 148.555pt>
+<logos/limsi.png, id=101, 285.065pt x 148.555pt>
 File: logos/limsi.png Graphic file (type png)
 <use logos/limsi.png>
 Package pdftex.def Info: logos/limsi.png  used on input line 81.
@@ -1197,7 +1197,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-msb.cfg"
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-<logos/lri.png, id=106, 88.33pt x 85.31876pt>
+<logos/lri.png, id=102, 88.33pt x 85.31876pt>
 File: logos/lri.png Graphic file (type png)
 <use logos/lri.png>
 Package pdftex.def Info: logos/lri.png  used on input line 86.
@@ -1248,6 +1248,34 @@ Package xcolor Warning: Incompatible color definition on input line 22.
 
 Package xcolor Warning: Incompatible color definition on input line 22.
 
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `latin1'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.30 ...pical cyclone", or hurricane. The Saffirâ€
+                                                  “Simpson hurricane scale (...
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `latin1'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.30 ...ical cyclone", or hurricane. The Saffirâ€“
+                                                  Simpson hurricane scale (S...
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
 [2
 
 ]) (body.tex [3]
@@ -1261,13 +1289,13 @@ Package xcolor Warning: Incompatible color definition on input line 22.
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 42.
+Package xcolor Warning: Incompatible color definition on input line 45.
 
 
-Package xcolor Warning: Incompatible color definition on input line 42.
+Package xcolor Warning: Incompatible color definition on input line 45.
 
 
-LaTeX Warning: Reference `fig:schema' on page 5 undefined on input line 94.
+LaTeX Warning: Reference `fig:schema' on page 5 undefined on input line 97.
 
 [5
 
@@ -1276,35 +1304,35 @@ LaTeX Warning: Reference `fig:schema' on page 5 undefined on input line 94.
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.96 \chapter
+l.99 \chapter
              {Experiments and Result Analysis}pdfTeX warning (ext4): destinatio
 n with the same identifier (name{table.4.2}) has been already used, duplicate i
 gnored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.96 \chapter
+l.99 \chapter
              {Experiments and Result Analysis}]
 
-Package xcolor Warning: Incompatible color definition on input line 96.
+Package xcolor Warning: Incompatible color definition on input line 99.
 
 
-Package xcolor Warning: Incompatible color definition on input line 96.
+Package xcolor Warning: Incompatible color definition on input line 99.
 
 
 LaTeX Warning: Citation `krizhevsky2014one' on page 7 undefined on input line 1
-06.
+09.
 
-<figs/MAE_all_6hforecast_paper.pdf, id=223, 675.36508pt x 428.4559pt>
+<figs/MAE_all_6hforecast_paper.pdf, id=220, 675.36508pt x 428.4559pt>
 File: figs/MAE_all_6hforecast_paper.pdf Graphic file (type pdf)
 <use figs/MAE_all_6hforecast_paper.pdf>
 Package pdftex.def Info: figs/MAE_all_6hforecast_paper.pdf  used on input line 
-113.
+116.
 (pdftex.def)             Requested size: 213.39566pt x 135.37619pt.
-<figs/storm_track3_new2.pdf, id=226, 358.88364pt x 435.28093pt>
+<figs/storm_track3_new2.pdf, id=223, 358.88364pt x 435.28093pt>
 File: figs/storm_track3_new2.pdf Graphic file (type pdf)
 <use figs/storm_track3_new2.pdf>
-Package pdftex.def Info: figs/storm_track3_new2.pdf  used on input line 125.
+Package pdftex.def Info: figs/storm_track3_new2.pdf  used on input line 128.
 (pdftex.def)             Requested size: 213.39566pt x 258.82599pt.
 ) (conclu.tex [7
 
@@ -1356,15 +1384,9 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 171.
  (rapport_m2_AIC.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 171.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 171.
+Package rerunfilecheck Info: File `rapport_m2_AIC.out' has not changed.
+(rerunfilecheck)             Checksum: 98F3689839BB485B4CB71B31B0F3B9A4;1539.
 
-
-Package rerunfilecheck Warning: File `rapport_m2_AIC.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `rapport_m2_AIC.out':
-(rerunfilecheck)             Before: 4A8E45E2F5FCA13FF6BC478F1D492075;1614
-(rerunfilecheck)             After:  C338AC52296D6C3BD3C42647350DD368;1539.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1374,29 +1396,26 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 171.
  ) 
 Here is how much of TeX's memory you used:
- 24635 strings out of 492973
- 461966 string characters out of 3135941
- 626739 words of memory out of 3000000
- 27920 multiletter control sequences out of 15000+200000
- 13749 words of font info for 87 fonts, out of 3000000 for 9000
+ 24640 strings out of 492973
+ 462029 string characters out of 3135941
+ 626779 words of memory out of 3000000
+ 27921 multiletter control sequences out of 15000+200000
+ 13857 words of font info for 88 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 52i,14n,67p,1119b,407s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{section.3.4} has been referenced but does not exi
-st, replaced by a fixed one
-
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmsl10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-ti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb
->
-Output written on rapport_m2_AIC.pdf (14 pages, 364957 bytes).
+ 52i,14n,67p,1233b,407s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.p
+fb>
+Output written on rapport_m2_AIC.pdf (14 pages, 367418 bytes).
 PDF statistics:
- 858 PDF objects out of 1000 (max. 8388607)
- 57 named destinations out of 1000 (max. 500000)
- 20203 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 857 PDF objects out of 1000 (max. 8388607)
+ 59 named destinations out of 1000 (max. 500000)
+ 20195 words of extra memory for PDF output out of 20736 (max. 10000000)
 

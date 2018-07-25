@@ -33,6 +33,9 @@ A typical CNN architecture known as VGG applies alternatively convolutional laye
 
 
 \section{CNN in climate science}
+The hurricane statistical forecasting models perform poorly with respect to dynamical models, even if the database made of past hurricane is constantly growing. The machine learning methods, able for example to capture non-linearity and complex relations, have only been scarcely tested. However, they have recently shown their efficacy in a various number of forecasting tasks. Particularly, convolutional neural networks (CNNs) have raised attention as they are suited for large imaging data.A convolutional LSTM model has been used for precipitation forecast in a promising study \cite{xingjian2015convolutional}. Another recent study predicts the evolution of sea surface temperature maps by combining CNNs with physical knowledge \cite{de2017deep}. The CNNs have also been used for the detection of extreme weather like hurricanes from meteorological variables patches. \cite{racah2017extremeweather}.
+To our knowledge, only two preliminary studies have tackled the hurricane forecast tracking using machine learning: the first one uses random forests on local reanalysis histograms \cite{liberge2011prevision}, however the mean error of 6h-forecasts seem to indicate poor results (more than 60km). The second uses a sparse recurrent neural network from trajectory data \cite{moradi2016sparse}, but it was tested on only 4 hurricanes and seem aslo to give large distance errors (mean 6h-forecast error is 72km).
+
 
 \section{Fusion architecture}
 \textbf{Fusion networks....}
@@ -132,6 +135,10 @@ We have plotted in Figure \ref{fig:track} an example of 6h-forecasts on one stor
 If these results are promising, some more long-term predictions are needed for a practical use. Moreover, current forecast models do not provide less than 24h-forecasts, which prevents us from comparing the results. With respect to the existing machine learning studies predicting 6h-forecasts \cite{liberge2011prevision,moradi2016sparse}, we tend to perform better (error larger than 60km for both studies) and on a larger/more diverse dataset. Moreover, if we only look at hurricane time steps (without depressions), our mean prediction error drops to 25.8km. Depressions seem to be more difficult to predict: an explanation can be that they are smaller and more subject to local perturbations.
 
 \section{Result Analysis}
+\subsection{Quantitative}
+
+\subsection{Qualitative}
+
 
 %%% Local Variables: 
 %%% mode: latex
