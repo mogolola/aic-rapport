@@ -19,9 +19,10 @@
 %% except that this permission notice may be stated in a translation
 %% approved by the Free Software Foundation
 %%  
-\chapter{Background}
 
-\section{Convolutional Neural Network}
+
+\chapter{Method}
+\section{Convolutional neural network}
 Convolutional neural network(CNN) has been widely adopted as a powerful tool for pattern recognition tasks with images or image-like data in various previous studies.(cite) 
 In the architecture of CNN, the basic components are convolutional layers, pooling layers, activation layers and fully connected layers. The convolutional layers perform convolutional operations between kernels and input images(for intermidiate feature map). A convolutional layer contains K kernels(filters) with the size (i,j,c), where i, j represent the width and height of the kernel and c represent the number of input channels, after the convlutional operation K feature maps serve as ouput and will be inputs of the next layers, deal with spatial-correlations...
 
@@ -32,17 +33,10 @@ A typical CNN architecture known as VGG applies alternatively convolutional laye
 \textbf{a throughout introduction to CNN and pattern recognition with CNN}
 
 
-\section{CNN in climate science}
-The hurricane statistical forecasting models perform poorly with respect to dynamical models, even if the database made of past hurricane is constantly growing. The machine learning methods, able for example to capture non-linearity and complex relations, have only been scarcely tested. However, they have recently shown their efficacy in a various number of forecasting tasks. Particularly, convolutional neural networks (CNNs) have raised attention as they are suited for large imaging data.A convolutional LSTM model has been used for precipitation forecast in a promising study \cite{xingjian2015convolutional}. Another recent study predicts the evolution of sea surface temperature maps by combining CNNs with physical knowledge \cite{de2017deep}. The CNNs have also been used for the detection of extreme weather like hurricanes from meteorological variables patches. \cite{racah2017extremeweather}.
-To our knowledge, only two preliminary studies have tackled the hurricane forecast tracking using machine learning: the first one uses random forests on local reanalysis histograms \cite{liberge2011prevision}, however the mean error of 6h-forecasts seem to indicate poor results (more than 60km). The second uses a sparse recurrent neural network from trajectory data \cite{moradi2016sparse}, but it was tested on only 4 hurricanes and seem aslo to give large distance errors (mean 6h-forecast error is 72km).
-
 
 \section{Fusion architecture}
 \textbf{Fusion networks....}
 
-
-
-\chapter{Method}
 
 \section{Data Description}
 The raw storm track data used in this study is composed of more than 3000 extra-tropical and tropical storm tracks since 1979 extracted from the NOAA database IBTrACS\cite{knapp2010international}, see Figure 2. The tracks are defined by the 6-hourly center locations (latitude and longitude). They come from both hemispheres and the number of records per storm varies from 2 to 120 time steps. In total, the database counts more than 90 000 time steps. 
