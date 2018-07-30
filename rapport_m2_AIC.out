@@ -6,17 +6,20 @@
 \BOOKMARK [1][-]{section.1.4}{Structure}{chapter.1}% 6
 \BOOKMARK [0][-]{chapter.2}{Background}{}% 7
 \BOOKMARK [1][-]{section.2.1}{Hurricane Trajectory Forecasting}{chapter.2}% 8
-\BOOKMARK [1][-]{section.2.2}{CNN in climate science}{chapter.2}% 9
-\BOOKMARK [0][-]{chapter.3}{Method}{}% 10
-\BOOKMARK [1][-]{section.3.1}{Convolutional neural network}{chapter.3}% 11
-\BOOKMARK [1][-]{section.3.2}{Fusion architecture}{chapter.3}% 12
-\BOOKMARK [1][-]{section.3.3}{Data Description}{chapter.3}% 13
-\BOOKMARK [1][-]{section.3.4}{CNN Configuration for Wind Fields and Geopotential Fields}{chapter.3}% 14
-\BOOKMARK [1][-]{section.3.5}{Neural Network for Past Tracks}{chapter.3}% 15
-\BOOKMARK [1][-]{section.3.6}{Fusion Architecture for All Sources of Data}{chapter.3}% 16
-\BOOKMARK [0][-]{chapter.4}{Experiments and Result Analysis}{}% 17
-\BOOKMARK [1][-]{section.4.1}{Data and Evaluation Settings}{chapter.4}% 18
-\BOOKMARK [1][-]{section.4.2}{Training Details and Results}{chapter.4}% 19
-\BOOKMARK [1][-]{section.4.3}{Result Analysis}{chapter.4}% 20
-\BOOKMARK [0][-]{chapter.5}{Conclusion and Discussion}{}% 21
-\BOOKMARK [0][-]{chapter*.11}{Bibliography}{}% 22
+\BOOKMARK [1][-]{section.2.2}{Forecast Method for Meteorologists}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.3}{Convolutional Neural Network}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.4}{CNN in climate science}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.5}{Fusion}{chapter.2}% 12
+\BOOKMARK [0][-]{chapter.3}{Method}{}% 13
+\BOOKMARK [1][-]{section.3.1}{Problem Setting}{chapter.3}% 14
+\BOOKMARK [1][-]{section.3.2}{Data Description}{chapter.3}% 15
+\BOOKMARK [1][-]{section.3.3}{CNN Configuration for Wind Fields and Geopotential Fields}{chapter.3}% 16
+\BOOKMARK [1][-]{section.3.4}{Neural Network for Past Tracks}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.5}{Fusion Architecture for All Sources of Data}{chapter.3}% 18
+\BOOKMARK [0][-]{chapter.4}{Experiments and Result Analysis}{}% 19
+\BOOKMARK [1][-]{section.4.1}{Evaluation Settings}{chapter.4}% 20
+\BOOKMARK [1][-]{section.4.2}{Training Details}{chapter.4}% 21
+\BOOKMARK [1][-]{section.4.3}{Results}{chapter.4}% 22
+\BOOKMARK [1][-]{section.4.4}{Result Analysis}{chapter.4}% 23
+\BOOKMARK [0][-]{chapter.5}{Conclusion and Discussion}{}% 24
+\BOOKMARK [0][-]{chapter*.8}{Bibliography}{}% 25

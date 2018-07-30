@@ -37,60 +37,88 @@
 \@writefile{toc}{\contentsline {section}{\numberline {2.1}Hurricane Trajectory Forecasting}{2}{section.2.1}}
 \newlabel{sec:chapter2_1}{{\M@TitleReference {2.1}{Hurricane Trajectory Forecasting}}{2}{Hurricane Trajectory Forecasting}{section.2.1}{}}
 \@writefile{toc}{\contentsline {subsection}{Formation of Hurricanes}{2}{section*.4}}
-\@writefile{toc}{\contentsline {subsection}{Forecast Method for Meteorologists}{2}{section*.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Forecast Method for Meteorologists}{2}{section.2.2}}
 \citation{nhc_models}
+\citation{nhc_models}
+\citation{russakovsky2015imagenet}
+\citation{krizhevsky2012imagenet}
+\citation{szegedy2015going}
+\citation{goldberg2014word2vec}
+\citation{sutskever2014sequence}
+\citation{simonyan2014very}
+\citation{krizhevsky2012imagenet}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Convolutional Neural Network}{3}{section.2.3}}
+\citation{krizhevsky2012imagenet}
+\citation{glorot2010understanding}
+\citation{he2015delving}
+\citation{krizhevsky2012imagenet}
+\citation{lecun1998gradient}
+\citation{lecun1998gradient}
 \citation{xingjian2015convolutional}
 \citation{de2017deep}
 \citation{racah2017extremeweather}
 \citation{liberge2011prevision}
 \citation{moradi2016sparse}
-\@writefile{toc}{\contentsline {subsection}{Limitation of current Forecasting method}{3}{section*.6}}
-\@writefile{toc}{\contentsline {subsection}{Reanalysis}{3}{section*.7}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}CNN in climate science}{3}{section.2.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Architecture of LeNet, shows a series of layers in CNN that learn hierarchical features representation \cite  {lecun1998gradient} }}{4}{figure.2.1}}
+\newlabel{fig:LeNet}{{\M@TitleReference {2.1}{Architecture of LeNet, shows a series of layers in CNN that learn hierarchical features representation \cite  {lecun1998gradient} }}{4}{Architecture of LeNet, shows a series of layers in CNN that learn hierarchical features representation \cite {lecun1998gradient} }{figure.2.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}CNN in climate science}{4}{section.2.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.5}Fusion}{5}{section.2.5}}
 \citation{knapp2010international}
 \citation{dee2011era}
 \citation{demaria2005further}
+\@writefile{toc}{\contentsline {chapter}{\chapternumberline {3}Method}{6}{chapter.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Problem Setting}{6}{section.3.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces General architecture: the two types of data are feeding two neural networks trained separately. The final fused network is re-trained before predicting the forecast track. }}{6}{figure.3.1}}
+\newlabel{fig:task}{{\M@TitleReference {3.1}{General architecture: the two types of data are feeding two neural networks trained separately. The final fused network is re-trained before predicting the forecast track. }}{6}{General architecture: the two types of data are feeding two neural networks trained separately. The final fused network is re-trained before predicting the forecast track. }{figure.3.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Data Description}{6}{section.3.2}}
 \citation{xingjian2015convolutional}
 \citation{de2017deep}
 \citation{racah2017extremeweather}
 \citation{simonyan2014very}
-\@writefile{toc}{\contentsline {chapter}{\chapternumberline {3}Method}{4}{chapter.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Convolutional neural network}{4}{section.3.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Fusion architecture}{4}{section.3.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}Data Description}{4}{section.3.3}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces \textbf  {ConvNet configurations}(shown in columns). The depth of the configurations increases from left(A) to the right(D), as more layers are added. The convolutional layer parametres are denoted as "conv(kernel size)-(number of output channels)". The ReLU activation layer and Batch normalization layers are not shown in figure }}{5}{table.3.1}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Number of parameters (in millions)}}{5}{table.3.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}CNN Configuration for Wind Fields and Geopotential Fields}{5}{section.3.4}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.5}Neural Network for Past Tracks}{5}{section.3.5}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.6}Fusion Architecture for All Sources of Data}{5}{section.3.6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Database: more than 3000 tropical/extra-tropical storm tracks since 1979. Dots = initial position, colors = maximal storm strength according to the Saffir-Simpson scale.}}{7}{figure.3.2}}
+\newlabel{fig:storm_tracks}{{\M@TitleReference {3.2}{Database: more than 3000 tropical/extra-tropical storm tracks since 1979. Dots = initial position, colors = maximal storm strength according to the Saffir-Simpson scale.}}{7}{Database: more than 3000 tropical/extra-tropical storm tracks since 1979. Dots = initial position, colors = maximal storm strength according to the Saffir-Simpson scale}{figure.3.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}CNN Configuration for Wind Fields and Geopotential Fields}{7}{section.3.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Neural Network for Past Tracks}{7}{section.3.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Fusion Architecture for All Sources of Data}{7}{section.3.5}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces \textbf  {ConvNet configurations}(shown in columns). The depth of the configurations increases from left(A) to the right(D), as more layers are added. The convolutional layer parametres are denoted as "conv(kernel size)-(number of output channels)". The ReLU activation layer and Batch normalization layers are not shown in figure }}{8}{table.3.1}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Number of parameters (in millions)}}{8}{table.3.2}}
 \citation{krizhevsky2014one}
 \citation{liberge2011prevision}
 \citation{moradi2016sparse}
-\@writefile{toc}{\contentsline {chapter}{\chapternumberline {4}Experiments and Result Analysis}{7}{chapter.4}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Data and Evaluation Settings}{7}{section.4.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Training Details and Results}{7}{section.4.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces 6h-forecast results on the test set (storms coming from all oceanic basins), in distance between predicted and real location. Baseline = previous displacement (going straight).}}{7}{figure.4.1}}
-\newlabel{fig:boxplots}{{\M@TitleReference {4.1}{6h-forecast results on the test set (storms coming from all oceanic basins), in distance between predicted and real location. Baseline = previous displacement (going straight).}}{7}{6h-forecast results on the test set (storms coming from all oceanic basins), in distance between predicted and real location. Baseline = previous displacement (going straight)}{figure.4.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Example of 6h-forecasts on one storm track. The baseline prediction is equal to the last 6h-displacement (going straight).}}{8}{figure.4.2}}
-\newlabel{fig:track}{{\M@TitleReference {4.2}{Example of 6h-forecasts on one storm track. The baseline prediction is equal to the last 6h-displacement (going straight).}}{8}{Example of 6h-forecasts on one storm track. The baseline prediction is equal to the last 6h-displacement (going straight)}{figure.4.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Result Analysis}{8}{section.4.3}}
-\@writefile{toc}{\contentsline {subsection}{Quantitative}{8}{section*.8}}
-\@writefile{toc}{\contentsline {subsection}{Qualitative}{8}{section*.9}}
-\@writefile{toc}{\contentsline {chapter}{\chapternumberline {5}Conclusion and Discussion}{9}{chapter.5}}
+\@writefile{toc}{\contentsline {chapter}{\chapternumberline {4}Experiments and Result Analysis}{9}{chapter.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Evaluation Settings}{9}{section.4.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Training Details}{9}{section.4.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Results}{9}{section.4.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces 6h-forecast results on the test set (storms coming from all oceanic basins), in distance between predicted and real location. Baseline = previous displacement (going straight).}}{9}{figure.4.1}}
+\newlabel{fig:boxplots}{{\M@TitleReference {4.1}{6h-forecast results on the test set (storms coming from all oceanic basins), in distance between predicted and real location. Baseline = previous displacement (going straight).}}{9}{6h-forecast results on the test set (storms coming from all oceanic basins), in distance between predicted and real location. Baseline = previous displacement (going straight)}{figure.4.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Example of 6h-forecasts on one storm track. The baseline prediction is equal to the last 6h-displacement (going straight).}}{10}{figure.4.2}}
+\newlabel{fig:track}{{\M@TitleReference {4.2}{Example of 6h-forecasts on one storm track. The baseline prediction is equal to the last 6h-displacement (going straight).}}{10}{Example of 6h-forecasts on one storm track. The baseline prediction is equal to the last 6h-displacement (going straight)}{figure.4.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Result Analysis}{10}{section.4.4}}
+\@writefile{toc}{\contentsline {subsection}{Quantitative}{10}{section*.5}}
+\@writefile{toc}{\contentsline {subsection}{Qualitative}{10}{section*.6}}
+\@writefile{toc}{\contentsline {chapter}{\chapternumberline {5}Conclusion and Discussion}{11}{chapter.5}}
 \bibstyle{plain}
 \bibdata{rapportM2R}
 \bibcite{nhc_models}{1}
 \bibcite{de2017deep}{2}
 \bibcite{dee2011era}{3}
 \bibcite{demaria2005further}{4}
-\bibcite{knapp2010international}{5}
-\bibcite{knutson2013dynamical}{6}
-\bibcite{liberge2011prevision}{7}
-\bibcite{moradi2016sparse}{8}
-\bibcite{peduzzi2012global}{9}
-\bibcite{racah2017extremeweather}{10}
-\bibcite{simonyan2014very}{11}
-\bibcite{xingjian2015convolutional}{12}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{11}{chapter*.11}}
-\memsetcounter{lastsheet}{14}
-\memsetcounter{lastpage}{11}
+\bibcite{glorot2010understanding}{5}
+\bibcite{goldberg2014word2vec}{6}
+\bibcite{he2015delving}{7}
+\bibcite{knapp2010international}{8}
+\bibcite{knutson2013dynamical}{9}
+\bibcite{krizhevsky2012imagenet}{10}
+\bibcite{lecun1998gradient}{11}
+\bibcite{liberge2011prevision}{12}
+\bibcite{moradi2016sparse}{13}
+\bibcite{peduzzi2012global}{14}
+\bibcite{racah2017extremeweather}{15}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{13}{chapter*.8}}
+\bibcite{russakovsky2015imagenet}{16}
+\bibcite{simonyan2014very}{17}
+\bibcite{sutskever2014sequence}{18}
+\bibcite{szegedy2015going}{19}
+\bibcite{xingjian2015convolutional}{20}
+\memsetcounter{lastsheet}{17}
+\memsetcounter{lastpage}{14}

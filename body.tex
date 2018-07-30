@@ -22,28 +22,34 @@
 
 
 \chapter{Method}
-\section{Convolutional neural network}
-Convolutional neural network(CNN) has been widely adopted as a powerful tool for pattern recognition tasks with images or image-like data in various previous studies.(cite) 
-In the architecture of CNN, the basic components are convolutional layers, pooling layers, activation layers and fully connected layers. The convolutional layers perform convolutional operations between kernels and input images(for intermidiate feature map). A convolutional layer contains K kernels(filters) with the size (i,j,c), where i, j represent the width and height of the kernel and c represent the number of input channels, after the convlutional operation K feature maps serve as ouput and will be inputs of the next layers, deal with spatial-correlations...
-
-With the evolution of CNN, researchers keep looking for better CNN architecture which has better precision and more computential efficiency. Since Alex net(2012), more and more attempts... 
-
-A typical CNN architecture known as VGG applies alternatively convolutional layers (use only 3x3 size kernel) and maxpooling layers (use only 2x2 size kernel) through the whole network, and put several fully connected layers at the end of the network to generate output. VGG often serves as a guideline to design architecture of the nerual network. The advantages of adopting VGG is that the most important hyper-parameters for designing CNN becomes the depth of the network without worrying about other hyper-parameters like kernel size. In this paper we will use VGG as a guideline to design our CNN for the task of storm track forecasting.
-
-\textbf{a throughout introduction to CNN and pattern recognition with CNN}
+\section{Problem Setting}
 
 
+The goal of the research is to predict the trajectory of Hurricane (\textbf{forecast cycle not yet decided}) using the information from the past storms since 1979. The task is shown in Figure \ref{task}. We aim at building an end-to-end model using two types of data (reanalysis data and 0D meta data), for each time step of each storm, we want to independently predict its displacement in the future(depending on forecast cycle). In this chapter, first we are going to describe the sources of data,  then we will show how we design the neural network for each source of the data, last we show that how we improve results with a fusion architecture of Neural Network. 
 
-\section{Fusion architecture}
-\textbf{Fusion networks....}
-
+\begin{figure}[H]
+	\begin{center}
+		\epsfxsize=0.75\hsize \epsfbox{figs/storm_shema.png}
+	\end{center}
+	\caption{General architecture: the two types of data are feeding two neural networks trained separately. The final fused network is re-trained before predicting the forecast track. }
+	\label{fig:task}
+\end{figure}
 
 \section{Data Description}
-The raw storm track data used in this study is composed of more than 3000 extra-tropical and tropical storm tracks since 1979 extracted from the NOAA database IBTrACS\cite{knapp2010international}, see Figure 2. The tracks are defined by the 6-hourly center locations (latitude and longitude). They come from both hemispheres and the number of records per storm varies from 2 to 120 time steps. In total, the database counts more than 90 000 time steps. 
+The raw storm track data used in this study is composed of more than 3000 extra-tropical and tropical storm tracks since 1979 extracted from the NOAA database IBTrACS\cite{knapp2010international}, see Figure \ref{fig:storm_tracks}. The tracks are defined by the 6-hourly center locations (latitude and longitude). They come from both hemispheres and the number of records per storm varies from 2 to 120 time steps. In total, the database counts more than 90 000 time steps. 
 
 The trajectory of a storm depends on large scale atmospheric flows. Thus, we extracted the wind fields of the neighborhood of the storm at every time step t from the ERA-interim reanalysis database \cite{dee2011era}. Specifically, we extracted the u-wind and v-wind fields on a $25x25$ degree grid centered on the current storm location, at 3 atmospheric pressure levels (700 hPa, 500 hPa and 225 hPa). Because we wanted to capture the dynamics, we also extracted the wind fields measured at $t - 6h$ at the same locations.
 
 The choice of the 3 pressure levels was driven by statistical forecast models \cite{demaria2005further}. The reason why we focused on the wind parameter is that we applied a sparse feature selection technique (Automatic Relevance Determination, based on linear regression) over all available reanalysis fields, which highlighted the usefulness of wind.
+
+\begin{figure}
+	\begin{center}
+		\epsfxsize=0.75\hsize \epsfbox{figs/all_storms.png}
+	\end{center}
+	\caption{Database: more than 3000 tropical/extra-tropical storm
+ 	tracks since 1979. Dots = initial position, colors = maximal storm strength according to the Saffir-Simpson scale.}
+	\label{fig:storm_tracks}
+\end{figure}
 
 
 \section{CNN Configuration for Wind Fields and Geopotential Fields}
@@ -91,9 +97,9 @@ for $t-12h$ and $t-6h$). We designed a small neural network (two small fully con
 Because of the different nature of the wind field image and of the past track data, it is not straightforward to mix them as a common input to a bigger network. Instead, we first train separately the wind field CNN and the small past track neural network (NN) previously mentioned, and then we fuse their two last layers, and re-train them together (see Figure \ref{fig:schema}). %\textbf{(include citation on similar fused network?)}
 
 \chapter{Experiments and Result Analysis}
-\section{Data and Evaluation Settings}
+\section{Evaluation Settings}
 
-\section{Training Details and Results}
+\section{Training Details}
 The storms were randomly separated in 3 sets as follows: train (60\%) / valid (20\%) / test (20\%).
 %= 60\%-20\%-20\%.
 Then, within each set, all time instants were treated independently.
@@ -103,7 +109,7 @@ As a loss function (quantity to optimise), we used the mean square error (MSE) i
 Our implementation uses PyTorch 4.0.  The training and testing took less than 1 hour on 4 TitanX GPUs with data parallelism \cite{krizhevsky2014one}.
 
 
-
+\section{Results}
 
 \begin{figure}
 	\begin{center}
