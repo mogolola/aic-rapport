@@ -25,7 +25,7 @@
 \section{Problem Setting}
 
 
-The goal of the research is to predict the trajectory of Hurricane (\textbf{forecast cycle not yet decided}) using the information from the past storms since 1979. The task is shown in Figure \ref{task}. We aim at building an end-to-end model using two types of data (reanalysis data and 0D meta data), for each time step of each storm, we want to independently predict its displacement in the future(depending on forecast cycle). In this chapter, first we are going to describe the sources of data,  then we will show how we design the neural network for each source of the data, last we show that how we improve results with a fusion architecture of Neural Network. 
+The goal of the research is to predict the trajectory of Hurricane (\textbf{forecast cycle not yet decided}) using the information from the past storms since 1979. The task is shown in Figure \ref{task}. We aim at building an end-to-end model using two types of data (reanalysis and hand-crafted features), for each time step of each storm, we want to independently predict its displacement in the future(depending on forecast cycle). In this chapter, first we are going to describe the sources of data,  then we will show how we design the neural network for each source of the data, last we show that how we improve results with a fusion architecture of Neural Network. 
 
 \begin{figure}[H]
 	\begin{center}
@@ -37,6 +37,9 @@ The goal of the research is to predict the trajectory of Hurricane (\textbf{fore
 
 \section{Data Description}
 The raw storm track data used in this study is composed of more than 3000 extra-tropical and tropical storm tracks since 1979 extracted from the NOAA database IBTrACS\cite{knapp2010international}, see Figure \ref{fig:storm_tracks}. The tracks are defined by the 6-hourly center locations (latitude and longitude). They come from both hemispheres and the number of records per storm varies from 2 to 120 time steps. In total, the database counts more than 90 000 time steps. 
+
+\subsection{Reanalysis}
+
 
 The trajectory of a storm depends on large scale atmospheric flows. Thus, we extracted the wind fields of the neighborhood of the storm at every time step t from the ERA-interim reanalysis database \cite{dee2011era}. Specifically, we extracted the u-wind and v-wind fields on a $25x25$ degree grid centered on the current storm location, at 3 atmospheric pressure levels (700 hPa, 500 hPa and 225 hPa). Because we wanted to capture the dynamics, we also extracted the wind fields measured at $t - 6h$ at the same locations.
 

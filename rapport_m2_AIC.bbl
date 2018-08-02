@@ -1,5 +1,16 @@
 \begin{thebibliography}{10}
 
+\bibitem{katrina_track}
+Hurricane katrina track.
+\newblock
+  \url{https://en.wikipedia.org/wiki/Meteorological_history_of_Hurricane_Katrina#/media/File:Katrina_2005_track.png}.
+\newblock Accessed: 2018-07-31.
+
+\bibitem{hurricane_energy}
+Hurricanes: The greatest storms on earth.
+\newblock \url{https://earthobservatory.nasa.gov/Features/Hurricanes}.
+\newblock Accessed: 2018-07-31.
+
 \bibitem{nhc_models}
 Nhc track and intensity models.
 \newblock \url{https://www.nhc.noaa.gov/modelsummary.shtml}.
@@ -44,6 +55,12 @@ Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
   imagenet classification.
 \newblock In {\em Proceedings of the IEEE international conference on computer
   vision}, pages 1026--1034, 2015.
+
+\bibitem{he2016deep}
+Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
+\newblock Deep residual learning for image recognition.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 770--778, 2016.
 
 \bibitem{knapp2010international}
 Kenneth~R Knapp, Michael~C Kruk, David~H Levinson, Howard~J Diamond, and
