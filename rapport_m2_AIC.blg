@@ -1,7 +1,11 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: rapport_m2_AIC.aux
 The style file: plain.bst
 Database file #1: rapportM2R.bib
-Repeated entry---line 205 of file rapportM2R.bib
+Repeated entry---line 153 of file rapportM2R.bib
+ : @inproceedings{sutskever2014sequence
+ :                                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 239 of file rapportM2R.bib
  : @article{simonyan2014very
  :                          ,
 I'm skipping whatever remains of this entry
@@ -9,4 +13,4 @@ Warning--I didn't find a database entry for "krizhevsky2014one"
 Warning--to sort, need author or key in hurricane_energy
 Warning--to sort, need author or key in nhc_models
 Warning--to sort, need author or key in katrina_track
-(There was 1 error message)
+(There were 2 error messages)

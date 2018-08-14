@@ -9,8 +9,9 @@
 \contentsline {subsection}{Formation of Hurricanes}{2}{section*.4}
 \contentsline {section}{\numberline {2.2}Forecast Method for Meteorologists}{3}{section.2.2}
 \contentsline {section}{\numberline {2.3}Convolutional Neural Network}{4}{section.2.3}
-\contentsline {section}{\numberline {2.4}CNN in climate science}{5}{section.2.4}
-\contentsline {section}{\numberline {2.5}Fusion}{6}{section.2.5}
+\contentsline {section}{\numberline {2.4}Neural Network for sequence modeling}{5}{section.2.4}
+\contentsline {section}{\numberline {2.5}CNN in climate science}{6}{section.2.5}
+\contentsline {section}{\numberline {2.6}Fusion}{6}{section.2.6}
 \contentsline {chapter}{\chapternumberline {3}Method}{7}{chapter.3}
 \contentsline {section}{\numberline {3.1}Problem Setting}{7}{section.3.1}
 \contentsline {section}{\numberline {3.2}Data Description}{7}{section.3.2}

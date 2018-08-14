@@ -49,6 +49,11 @@ Yoav Goldberg and Omer Levy.
   word-embedding method.
 \newblock {\em arXiv preprint arXiv:1402.3722}, 2014.
 
+\bibitem{graves2013generating}
+Alex Graves.
+\newblock Generating sequences with recurrent neural networks.
+\newblock {\em arXiv preprint arXiv:1308.0850}, 2013.
+
 \bibitem{he2015delving}
 Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
 \newblock Delving deep into rectifiers: Surpassing human-level performance on
@@ -61,6 +66,11 @@ Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
 \newblock Deep residual learning for image recognition.
 \newblock In {\em Proceedings of the IEEE conference on computer vision and
   pattern recognition}, pages 770--778, 2016.
+
+\bibitem{hochreiter1997long}
+Sepp Hochreiter and J{\"u}rgen Schmidhuber.
+\newblock Long short-term memory.
+\newblock {\em Neural computation}, 9(8):1735--1780, 1997.
 
 \bibitem{knapp2010international}
 Kenneth~R Knapp, Michael~C Kruk, David~H Levinson, Howard~J Diamond, and
