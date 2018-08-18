@@ -16,6 +16,19 @@ Nhc track and intensity models.
 \newblock \url{https://www.nhc.noaa.gov/modelsummary.shtml}.
 \newblock Accessed: 2018-07-04.
 
+\bibitem{bai2018empirical}
+Shaojie Bai, J~Zico Kolter, and Vladlen Koltun.
+\newblock An empirical evaluation of generic convolutional and recurrent
+  networks for sequence modeling.
+\newblock {\em arXiv preprint arXiv:1803.01271}, 2018.
+
+\bibitem{collobert2008unified}
+Ronan Collobert and Jason Weston.
+\newblock A unified architecture for natural language processing: Deep neural
+  networks with multitask learning.
+\newblock In {\em Proceedings of the 25th international conference on Machine
+  learning}, pages 160--167. ACM, 2008.
+
 \bibitem{de2017deep}
 Manu de~Bezenac, Arthur Pajot, and Patrick Gallinari.
 \newblock Deep learning for physical processes: Incorporating prior scientific
@@ -35,6 +48,11 @@ Mark DeMaria, Michelle Mainelli, Lynn~K Shay, John~A Knaff, and John Kaplan.
 \newblock Further improvements to the statistical hurricane intensity
   prediction scheme (ships).
 \newblock {\em Weather and Forecasting}, 20(4):531--543, 2005.
+
+\bibitem{gehring2017convolutional}
+Jonas Gehring, Michael Auli, David Grangier, Denis Yarats, and Yann~N Dauphin.
+\newblock Convolutional sequence to sequence learning.
+\newblock {\em arXiv preprint arXiv:1705.03122}, 2017.
 
 \bibitem{glorot2010understanding}
 Xavier Glorot and Yoshua Bengio.
@@ -71,6 +89,16 @@ Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
 Sepp Hochreiter and J{\"u}rgen Schmidhuber.
 \newblock Long short-term memory.
 \newblock {\em Neural computation}, 9(8):1735--1780, 1997.
+
+\bibitem{kalchbrenner2014convolutional}
+Nal Kalchbrenner, Edward Grefenstette, and Phil Blunsom.
+\newblock A convolutional neural network for modelling sentences.
+\newblock {\em arXiv preprint arXiv:1404.2188}, 2014.
+
+\bibitem{kim2014convolutional}
+Yoon Kim.
+\newblock Convolutional neural networks for sentence classification.
+\newblock {\em arXiv preprint arXiv:1408.5882}, 2014.
 
 \bibitem{knapp2010international}
 Kenneth~R Knapp, Michael~C Kruk, David~H Levinson, Howard~J Diamond, and
@@ -151,6 +179,13 @@ Christian Szegedy, Wei Liu, Yangqing Jia, Pierre Sermanet, Scott Reed, Dragomir
 \newblock Going deeper with convolutions.
 \newblock In {\em Proceedings of the IEEE conference on computer vision and
   pattern recognition}, pages 1--9, 2015.
+
+\bibitem{waibel1990phoneme}
+Alexander Waibel, Toshiyuki Hanazawa, Geoffrey Hinton, Kiyohiro Shikano, and
+  Kevin~J Lang.
+\newblock Phoneme recognition using time-delay neural networks.
+\newblock In {\em Readings in speech recognition}, pages 393--404. Elsevier,
+  1990.
 
 \bibitem{xingjian2015convolutional}
 SHI Xingjian, Zhourong Chen, Hao Wang, Dit-Yan Yeung, Wai-Kin Wong, and

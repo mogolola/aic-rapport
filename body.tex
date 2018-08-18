@@ -22,19 +22,7 @@
 
 
 \chapter{Method}
-\section{Problem Setting}
-
-
-The goal of the research is to predict the trajectory of Hurricane (\textbf{forecast cycle not yet decided}) using the information from the past storms since 1979. The task is shown in Figure \ref{task}. We aim at building an end-to-end model using two types of data (reanalysis and hand-crafted features), for each time step of each storm, we want to independently predict its displacement in the future(depending on forecast cycle). In this chapter, first we are going to describe the sources of data,  then we will show how we design the neural network for each source of the data, last we show that how we improve results with a fusion architecture of Neural Network. 
-
-\begin{figure}[H]
-	\begin{center}
-		\epsfxsize=0.75\hsize \epsfbox{figs/storm_shema.png}
-	\end{center}
-	\caption{General architecture: the two types of data are feeding two neural networks trained separately. The final fused network is re-trained before predicting the forecast track. }
-	\label{fig:task}
-\end{figure}
-
+In this chapter, first we are going to describe the sources of data,  then we will show how we design the neural network for each source of the data, last we show that how we improve results with a fusion architecture of Neural Network. 
 \section{Data Description}
 The raw storm track data used in this study is composed of more than 3000 extra-tropical and tropical storm tracks since 1979 extracted from the NOAA database IBTrACS\cite{knapp2010international}, see Figure \ref{fig:storm_tracks}. The tracks are defined by the 6-hourly center locations (latitude and longitude). They come from both hemispheres and the number of records per storm varies from 2 to 120 time steps. In total, the database counts more than 90 000 time steps. 
 

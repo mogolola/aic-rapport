@@ -8,23 +8,24 @@
 \contentsline {section}{\numberline {2.1}Hurricane Trajectory Forecasting}{2}{section.2.1}
 \contentsline {subsection}{Formation of Hurricanes}{2}{section*.4}
 \contentsline {section}{\numberline {2.2}Forecast Method for Meteorologists}{3}{section.2.2}
-\contentsline {section}{\numberline {2.3}Convolutional Neural Network}{4}{section.2.3}
-\contentsline {section}{\numberline {2.4}Neural Network for sequence modeling}{5}{section.2.4}
-\contentsline {section}{\numberline {2.5}CNN in climate science}{6}{section.2.5}
-\contentsline {section}{\numberline {2.6}Fusion}{6}{section.2.6}
-\contentsline {chapter}{\chapternumberline {3}Method}{7}{chapter.3}
-\contentsline {section}{\numberline {3.1}Problem Setting}{7}{section.3.1}
-\contentsline {section}{\numberline {3.2}Data Description}{7}{section.3.2}
-\contentsline {subsection}{Reanalysis}{7}{section*.5}
-\contentsline {section}{\numberline {3.3}CNN Configuration for Wind Fields and Geopotential Fields}{8}{section.3.3}
-\contentsline {section}{\numberline {3.4}Neural Network for Past Tracks}{8}{section.3.4}
-\contentsline {section}{\numberline {3.5}Fusion Architecture for All Sources of Data}{8}{section.3.5}
-\contentsline {chapter}{\chapternumberline {4}Experiments and Result Analysis}{10}{chapter.4}
-\contentsline {section}{\numberline {4.1}Evaluation Settings}{10}{section.4.1}
-\contentsline {section}{\numberline {4.2}Training Details}{10}{section.4.2}
-\contentsline {section}{\numberline {4.3}Results}{10}{section.4.3}
-\contentsline {section}{\numberline {4.4}Result Analysis}{11}{section.4.4}
-\contentsline {subsection}{Quantitative}{11}{section*.6}
-\contentsline {subsection}{Qualitative}{11}{section*.7}
-\contentsline {chapter}{\chapternumberline {5}Conclusion and Discussion}{12}{chapter.5}
-\contentsline {chapter}{Bibliography}{14}{chapter*.9}
+\contentsline {section}{\numberline {2.3}Machine Learning in Climate Science}{4}{section.2.3}
+\contentsline {chapter}{\chapternumberline {3}Prelimiaries}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}Problem Setting}{5}{section.3.1}
+\contentsline {section}{\numberline {3.2}Neural Network for sequence modeling}{5}{section.3.2}
+\contentsline {section}{\numberline {3.3}Convolutional Neural Network}{6}{section.3.3}
+\contentsline {section}{\numberline {3.4}Fusion}{7}{section.3.4}
+\contentsline {chapter}{\chapternumberline {4}Method}{8}{chapter.4}
+\contentsline {section}{\numberline {4.1}Data Description}{8}{section.4.1}
+\contentsline {subsection}{Reanalysis}{8}{section*.5}
+\contentsline {section}{\numberline {4.2}CNN Configuration for Wind Fields and Geopotential Fields}{9}{section.4.2}
+\contentsline {section}{\numberline {4.3}Neural Network for Past Tracks}{9}{section.4.3}
+\contentsline {section}{\numberline {4.4}Fusion Architecture for All Sources of Data}{9}{section.4.4}
+\contentsline {chapter}{\chapternumberline {5}Experiments and Result Analysis}{11}{chapter.5}
+\contentsline {section}{\numberline {5.1}Evaluation Settings}{11}{section.5.1}
+\contentsline {section}{\numberline {5.2}Training Details}{11}{section.5.2}
+\contentsline {section}{\numberline {5.3}Results}{11}{section.5.3}
+\contentsline {section}{\numberline {5.4}Result Analysis}{12}{section.5.4}
+\contentsline {subsection}{Quantitative}{12}{section*.6}
+\contentsline {subsection}{Qualitative}{12}{section*.7}
+\contentsline {chapter}{\chapternumberline {6}Conclusion and Discussion}{13}{chapter.6}
+\contentsline {chapter}{Bibliography}{15}{chapter*.9}
