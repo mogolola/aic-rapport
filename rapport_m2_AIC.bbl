@@ -1,5 +1,21 @@
 \begin{thebibliography}{10}
 
+\bibitem{inria_overview}
+At the heart of the main national research and higher education cluster.
+\newblock \url{https://www.inria.fr/en/centre/saclay/overview}.
+\newblock Accessed: 2018-07-04.
+
+\bibitem{Reanalysis}
+Atmospheric reanalysis: Overview and comparison tables.
+\newblock
+  \url{https://climatedataguide.ucar.edu/climate-data/atmospheric-reanalysis-overview-comparison-tables}.
+\newblock Accessed: 2018-07-04.
+
+\bibitem{TAO}
+History of tao.
+\newblock \url{https://tao.lri.fr/tiki-index.php}.
+\newblock Accessed: 2018-07-04.
+
 \bibitem{katrina_track}
 Hurricane katrina track.
 \newblock
@@ -11,9 +27,31 @@ Hurricanes: The greatest storms on earth.
 \newblock \url{https://earthobservatory.nasa.gov/Features/Hurricanes}.
 \newblock Accessed: 2018-07-31.
 
+\bibitem{inria_statistics}
+key figures about the inria.
+\newblock \url{https://www.inria.fr/en/institute/inria-in-brief/key-figures}.
+\newblock Accessed: 2018-07-04.
+
 \bibitem{nhc_models}
 Nhc track and intensity models.
 \newblock \url{https://www.nhc.noaa.gov/modelsummary.shtml}.
+\newblock Accessed: 2018-07-04.
+
+\bibitem{NYT}
+Nyt sept 9, 2017.
+\newblock
+  \url{https://www.nytimes.com/2017/09/09/us/hurricane-irma-florida.html}.
+\newblock Accessed: 2018-07-04.
+
+\bibitem{balazs-kegl}
+Portrait of balazs kegl.
+\newblock
+  \url{https://www.universite-paris-saclay.fr/en/recherche/portraits-de-chercheurs/balazs-kegl}.
+\newblock Accessed: 2018-07-04.
+
+\bibitem{TAU}
+Tackling the underspecified.
+\newblock \url{https://www.inria.fr/equipes/tau}.
 \newblock Accessed: 2018-07-04.
 
 \bibitem{bai2018empirical}

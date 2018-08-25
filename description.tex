@@ -59,7 +59,7 @@ Cyclones, hurricanes or typhoons are words for the same phenomena: a rare and co
 \end{table}
 
 \subsection{Formation of Hurricanes}
-The evolution and path of hurricanes depend on many factors at different scales and altitudes. All hurricanes are formed over warm ocean water near the equator. Warm and moist air over the ocean rises upward, which cause low-pressure area below. The air from high-pressure surrounding areas flows over into low-pressure areas and new air is heated and rise upward again. As warm and moist air rise and cools off, the water in the air forms clouds. Figure \ref{hurricane_section} shows the wind flows inside storm. The storm grows up and rotates as the cycle continues to be fed by ocean's heat and water evaporating from the surface. When the winds in the rotating storm reach 39mph(miles per hour, equivalent to 63km/h), the storm is called a "tropical storm". When the wind speeds reach 74 mph, the storm is officially called a "tropical cyclone", or hurricane. The Saffir–Simpson hurricane scale (SSHS) classifies hurricanes into 5 categories distinguished by the intensities of their sustained winds. The highest classification in the scale, category 5, consists of storms with sustained wind speeds higher than 156mph, See Figure\ref{fig::Saffir_Simpson}\\
+The evolution and path of hurricanes depend on many factors at different scales and altitudes. All hurricanes are formed over warm ocean water near the equator. Warm and moist air over the ocean rises upward, which cause low-pressure area below. The air from high-pressure surrounding areas flows over into low-pressure areas and new air is heated and rise upward again. As warm and moist air rise and cools off, the water in the air forms clouds. Figure \ref{hurricane_section} shows the wind flows inside storm. The storm grows up and rotates as the cycle continues to be fed by ocean's heat and water evaporating from the surface. When the winds in the rotating storm reach 39mph(miles per hour, equivalent to 63km/h), the storm is called a "tropical storm". When the wind speeds reach 74 mph, the storm is officially called a "tropical cyclone", or hurricane. The Saffir–Simpson hurricane scale (SSHS) classifies hurricanes into 5 categories distinguished by the intensities of their sustained winds. The highest classification in the scale, category 5, consists of storms with sustained wind speeds higher than 156mph, See Figure\ref{fig::Saffir_Simpson}. To avoid ambiguity, the term 'storm' will be used for all kinds of categories in SSHS and the term 'hurricane' will only be used for those in category 5 in the report. \\
 A hurricane can be very unpredictable. The hurricane movement can perform loops, hairpin turns, and sharp curves. Its intensity can also change dramatically in a very short time. In 2005, hurricane Katrina was only classified as a tropical storm when it made its first landfall in Florida . After emerged into the Gulf of Mexico, it rapidly strengthened into a Category 5 hurricane in two days. Its second landfall finally caused the largest damage in history. The track and evolution of Hurricane Katrina is shown in Figure\ref{fig:Katrina}  Global warming is also considered to influence hurricane activities. It is estimated that global warming will cause mode intense hurricanes globally in the coming century and have higher rainfall rates\cite{knutson2013dynamical}, which may lead to both more representative and more consistent error statistics for forecasting.
 
 \begin{figure}[t]
@@ -92,7 +92,7 @@ The hurricane statistical forecasting models perform poorly with respect to the 
 
 To our knowledge, only two preliminary studies have tackled the hurricane forecast tracking using machine learning: the first one uses random forests on local reanalysis histograms \cite{liberge2011prevision}, however it was tested only on tropical storms in 2015 in North Atlantic, and the mean error of 6h-forecasts seem to indicate poor results (more than 60km). The second uses a sparse recurrent neural network from trajectory data \cite{moradi2016sparse}, it was tested on only 4 hurricanes and seem also to give large distance errors (mean 6h-forecast error is 72km). 
 
-In the report, we propose...
+In the report, we propose...The objective of the internship is to study for using deep learning as alternative methodology for hurricane trajectory forecasting. We propose a neural network architecture taking into account past trajectory data and reanalysis atmospheric physical fields images. This fused network estimates the longitude and latitude 6h-72h forecast of hurricanes and depressions from both hemispheres and different basins (more than 3000 storms since 1979). We then compare our forecast results with results of NHC's models, including a representative early model BCD5 and their official model OCFL. 
 
 
 \chapter{Prelimiaries}
@@ -135,7 +135,6 @@ CNN is known to be tedious to train. To build an excellent CNN, researchers have
 	\label{fig:LeNet}
 \end{figure}
 
-\section{Fusion}
 
 
 

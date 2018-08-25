@@ -22,29 +22,49 @@
 
 
 \chapter{Method}
-In this chapter, first we are going to describe the sources of data,  then we will show how we design the neural network for each source of the data, last we show that how we improve results with a fusion architecture of Neural Network. 
 \section{Data Description}
-The raw storm track data used in this study is composed of more than 3000 extra-tropical and tropical storm tracks since 1979 extracted from the NOAA database IBTrACS\cite{knapp2010international}, see Figure \ref{fig:storm_tracks}. The tracks are defined by the 6-hourly center locations (latitude and longitude). They come from both hemispheres and the number of records per storm varies from 2 to 120 time steps. In total, the database counts more than 90 000 time steps. 
-
-\subsection{Reanalysis}
-
-
-The trajectory of a storm depends on large scale atmospheric flows. Thus, we extracted the wind fields of the neighborhood of the storm at every time step t from the ERA-interim reanalysis database \cite{dee2011era}. Specifically, we extracted the u-wind and v-wind fields on a $25x25$ degree grid centered on the current storm location, at 3 atmospheric pressure levels (700 hPa, 500 hPa and 225 hPa). Because we wanted to capture the dynamics, we also extracted the wind fields measured at $t - 6h$ at the same locations.
-
-The choice of the 3 pressure levels was driven by statistical forecast models \cite{demaria2005further}. The reason why we focused on the wind parameter is that we applied a sparse feature selection technique (Automatic Relevance Determination, based on linear regression) over all available reanalysis fields, which highlighted the usefulness of wind.
-
+\subsection{Storm track data}
+The raw storm track data used in this research is composed of more than 3000 extra-tropical and tropical storm tracks since 1979 extracted from the NOAA database IBTrACS\cite{knapp2010international}, see Figure \ref{fig:storm_tracks}. The tracks are defined by the 6-hourly center locations (latitude and longitude) for the entire lives of the storms. They come from both hemispheres and the number of records per storm varies from 2 to 120 time steps. In total, the database counts more than 90 000 time steps. 
 \begin{figure}
 	\begin{center}
 		\epsfxsize=0.75\hsize \epsfbox{figs/all_storms.png}
 	\end{center}
 	\caption{Database: more than 3000 tropical/extra-tropical storm
- 	tracks since 1979. Dots = initial position, colors = maximal storm strength according to the Saffir-Simpson scale.}
+		tracks since 1979. Dots = initial position, colors = maximal storm strength according to the Saffir-Simpson scale.}
+	\label{fig:storm_tracks}
+\end{figure}
+\subsection{Reanalysis}
+Reanalysis is a systematic approach to produce data sets for climate monitoring and research\cite{Reanalysis}. Reanalyses are created via an unchanging ("frozen") data assimilation scheme and model(s) which take all available observations as inputs every 6-12 hours over the period being analyzed. The input raw data can include but not limited to radiosonde, satellite, buoy, aircraft and ship reports. The framework generate dynamically consistent estimate of the climate atmospheric fields or state at each time point. Reanalyses can cover the entire globe from the Earth’s surface to well above the stratosphere and have hundreds of available variables. The data is structured and easy to handle from a processing standpoint. Basically the model resolution and biases have been steadily improved over time. While Reanalyses also have limitation. The reliability of the data can vary depending on the location, time period, and variables considered due to observational constraints. 
+
+The ERA-Interim is one of the reanalysis data sets that cover the data-rich period since 1979 to date. The ERA-Interim is the latest global atmospheric reanalysis produced by The European Centre for Medium-Range Weather Forecasts (ECMWF) and is continued in real time. The spectral resolution is T255 (about 80 km) and there are 60 vertical pressure levels, with the model top at 0.1 hPa (about 64 km). 
+
+\section{Feature selection}
+In the research we use storm track data and reanalysis to predict hurricane's track in the future. To capture the movement of a storm, we have classified 4 sources of information: 
+\begin{enumerate}[leftmargin=2em]
+	\item \textbf{The wind fields.}The trajectory of a storm depends on large scale atmospheric flows. Wind fields are the direct observation of the atmospheric flows. Thus, we extracted the wind fields of the neighborhood of the storm at every time step from the ERA-interim reanalysis database \cite{dee2011era}. Specifically, we extracted the u-wind and v-wind fields on a $25x25$ degree grid centered on the current storm location, at 3 atmospheric pressure levels (700 hPa, 500 hPa and 225 hPa).The choice of the 3 pressure levels was driven by statistical forecast models \cite{demaria2005further}. 
+	\item \textbf{The geopotential height fields.} Atmospheric flows are directly due to the existence of \textbf{pressure gradients}, because particles in a fluid manner naturally flow from areas of higher pressure to areas of lower pressure. Geopotential height is a vertical coordinate referenced to Earth's mean sea level which is an adjustment of geometric height using a variation of gravity with latitude and evaluation (gravity changes with different latitude). Geopotential height has a positive correlation with pressure in a certain \textbf{pressure level}. For example, if somewhere has a higher geopotential height in a certain pressure level, it means that at the same geometric level that place has a higher pressure. In meteorology, scientists often use geopotential height as a function of pressure to facilitate calculation. Similar to wind fields, we extracted the geopotential height fields of the neighborhood of the storm at every time step on a $25x25$ degree grid centered on the current storm location, at 3 atmospheric pressure levels (700 hPa, 500 hPa and 225 hPa).
+	
+	\item \textbf{Displacement in history} A storm's future displacement can be predicted from his historical displacement in a statistical approach.
+	
+	\item \textbf{Other hand-crafted features.}
+	Other useful features we extracted from a storm are: \textbf{current latitude and longitude}, \textbf{current windspeed} at the center of the storm, \textbf{Jday predictor}(Gaussian function of "Julian day of storm init - peak day of the hurricane season"\cite{demaria2005further}), and \textbf{current distance to land}. We call them meta data.
+\end{enumerate}
+
+ Another reason why we focused on the wind and geopotential parameters is that we applied a sparse feature selection technique (Automatic Relevance Determination, based on linear regression) over all available reanalysis fields, which highlighted the usefulness of wind.
+
+\section{Models}
+Because of the different nature of the wind field images, geopotential field images, and the past track data, it is not straightforward to mix them as a common input to a bigger network. We then trained 3 neural networks separately for prediction. Then we have proposed an integrated approach to fuse them. 
+
+\begin{figure}
+	\begin{center}
+		\epsfxsize=0.95\hsize \epsfbox{figs/fusion_network.pdf}
+	\end{center}
+	\caption{General architecture: the three types of data are feeding three neural networks trained separately. The final fused network is re-trained before predicting the forecast track}
 	\label{fig:storm_tracks}
 \end{figure}
 
-
-\section{CNN Configuration for Wind Fields and Geopotential Fields}
-Convolutional neural networks (CNN) are suited for non-linear learning with image-like data. They have already shown their efficiency in the climate informatics field \cite{xingjian2015convolutional, de2017deep,racah2017extremeweather}. The centered wind fields at different pressure levels at $t$ and $t-6h$ can be seen as 12 images of size 25x25. We used as a guideline a typical CNN architecture alternating convolutional layers and max-pooling layers and added several fully connected layers at the end of the network \cite{simonyan2014very}. To measure the improvements brought by increasing the CNN depth, we have designed 4 CNNs with the same number of neurons and varying depths. 
+\subsection{CNN Configuration for Wind Fields and Geopotential Fields}
+ The centered wind fields at different pressure levels at $t$ and $t-6h$ can be seen as 12 images of size 25x25. We used as a guideline a typical CNN architecture alternating convolutional layers and max-pooling layers and added several fully connected layers at the end of the network \cite{simonyan2014very}. To measure the improvements brought by increasing the CNN depth, we have designed 4 CNNs with the same number of neurons and varying depths. 
 
 
 \begin{table}[]
@@ -56,7 +76,7 @@ Convolutional neural networks (CNN) are suited for non-linear learning with imag
 			A                                                                   & B                                                                              & C                                                                                          & D                                                                                                                \\ \hline
 			7 layers                                                            & 8 layers                                                                       & 9 layers                                                                                   & 10 layers                                                                                                        \\ \hline
 			\multicolumn{4}{|c|}{input (25*25, 12 channels image)}                                                                                                                                                                                                                                                                                                               \\ \hline
-			\begin{tabular}[t]{@{}c@{}}conv4-32\\ maxpool\end{tabular} & \begin{tabular}[t]{@{}c@{}}conv4-32\\ conv3-32\\ maxpool\end{tabular} & \begin{tabular}[t]{@{}c@{}}conv4-64\\ conv3-64\\ maxpool\\ conv3-256\end{tabular} & \begin{tabular}[t]{@{}c@{}}conv4-64\\ conv3-64\\ maxpool\\ conv3-128\\ conv3-256\\ maxpool\end{tabular} \\ \hline
+			\begin{tabular}[t]{@{}c@{}}conv3-32\\ maxpool\end{tabular} & \begin{tabular}[t]{@{}c@{}}conv3-32\\ conv3-32\\ maxpool\end{tabular} & \begin{tabular}[t]{@{}c@{}}conv3-64\\ conv3-64\\ maxpool\\ conv3-256\end{tabular} & \begin{tabular}[t]{@{}c@{}}conv3-64\\ conv3-64\\ maxpool\\ conv3-128\\ conv3-256\\ maxpool\end{tabular} \\ \hline
 			\multicolumn{4}{|c|}{FC-576}                                                                                                                                                                                                                                                                                                                                         \\ \hline
 			\multicolumn{4}{|c|}{FC-128}                                                                                                                                                                                                                                                                                                                                         \\ \hline
 			\multicolumn{4}{|c|}{FC-64}                                                                                                                                                                                                                                                                                                                                          \\ \hline
@@ -77,13 +97,13 @@ Convolutional neural networks (CNN) are suited for non-linear learning with imag
 	\end{tabular}
 \end{table}
 
-\section{Neural Network for Past Tracks}
+\subsection{Neural Network for Past Tracks}
 Another important source of information is the previous displacements
 %($d_{lat},d_{long}$
 (latitude and longitude
 for $t-12h$ and $t-6h$). We designed a small neural network (two small fully connected layers) able to learn the future track from this past track.
 
-\section{Fusion Architecture for All Sources of Data}
+\subsection{Fusion Architecture for All Sources of Data}
 
 Because of the different nature of the wind field image and of the past track data, it is not straightforward to mix them as a common input to a bigger network. Instead, we first train separately the wind field CNN and the small past track neural network (NN) previously mentioned, and then we fuse their two last layers, and re-train them together (see Figure \ref{fig:schema}). %\textbf{(include citation on similar fused network?)}
 

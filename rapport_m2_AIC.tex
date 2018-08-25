@@ -50,6 +50,8 @@
 \usepackage{multirow}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{enumitem}
 
 %%\input{french_stuff}
 %% Page layout
@@ -63,8 +65,15 @@
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
-\begin{document}
+\makeatletter
+\def\zdyxh#1{\expandafter\@zdyxh\csname c@#1\endcsname}
+\def\@zdyxh#1{%
+	\ifcase#1\or \textup{RQ1} \or \textup{RQ2} \or \textup{RQ3}\or \textup{RQ4}\or \textup{RQ5}\else\textup{RQ6}\fi}
+\makeatother
+\AddEnumerateCounter*{\zdyxh}{\@zdyxh}{1}
 
+\begin{document}
+	
 \begin{titlingpage}
  
 \begin{center}
