@@ -52,21 +52,30 @@ In the research we use storm track data and reanalysis to predict hurricane's tr
 
  Another reason why we focused on the wind and geopotential parameters is that we applied a sparse feature selection technique (Automatic Relevance Determination, based on linear regression) over all available reanalysis fields, which highlighted the usefulness of wind.
 
-\section{Models}
-Because of the different nature of the wind field images, geopotential field images, and the past track data, it is not straightforward to mix them as a common input to a bigger network. We then trained 3 neural networks separately for prediction. Then we have proposed an integrated approach to fuse them. 
+\section{Overview of Proposed Method}
 
-\begin{figure}
+Because of the different nature of the wind field images, geopotential field images, and the past track data, it is not straightforward to mix them as a common input to a bigger network. We propose a fusion neural network architecture taking into account past trajectory data and reanalysis atmospheric physical fields images. An overview of the architecture is shown in Fig \ref{fig:fusion_arch}. We devise our fusion architecture accordingly, dividing into 3 streams: \textbf{Wind CNN}, \textbf{Pressure CNN} and \textbf{Past tracks + meta NN}. Wind CNN and Pressure CNN are convolutional neural networks that take atmospheric fields as input, Past tracks + meta NN is a small neural network which take 0D features as input. Each stream network is supposed make prediction independently. We fine-tune the parameters of each individual stream network for the same task of predicting the forecast track. Then we integrate the three networks into a fusion networks and retrain the parameters. The different steps will be outlined in the following sections.
+
+
+
+\begin{figure} 
 	\begin{center}
 		\epsfxsize=0.95\hsize \epsfbox{figs/fusion_network.pdf}
 	\end{center}
 	\caption{General architecture: the three types of data are feeding three neural networks trained separately. The final fused network is re-trained before predicting the forecast track}
-	\label{fig:storm_tracks}
+	\label{fig:fusion_arch}
 \end{figure}
 
-\subsection{CNN Configuration for Wind Fields and Geopotential Fields}
- The centered wind fields at different pressure levels at $t$ and $t-6h$ can be seen as 12 images of size 25x25. We used as a guideline a typical CNN architecture alternating convolutional layers and max-pooling layers and added several fully connected layers at the end of the network \cite{simonyan2014very}. To measure the improvements brought by increasing the CNN depth, we have designed 4 CNNs with the same number of neurons and varying depths. 
+\section{Wind CNN and Pressure CNN}
+In this section, we discuss the configuration of Wind CNN and Pressure CNN(the blue and yellow streams in Fig. \ref{fig:fusion_arch}).
+The two networks are described in the same section because they are very similar in which they both extract information from atmospheric fields. The input data for Wind CNN and Pressure CNN is the centered atmospheric fields at different pressure levels at current time step as well as its consecutive time steps in history. An essential problem is how many time steps should be taken at each time. We started by taking wind fields measured at $t$ and $t - 6h$ at the same locations. We use a simple data structure: The input of Wind CNN can be seen as 12 images of size 25x25, including u, v components of wind fields at 3 atmospheric pressure levels (700 hPa, 500 hPa and 225 hPa) at the two time steps. And the input of Pressure CNN has 6 images of size 25x25 , including geopotential height fields at the three pressure levels at the two time steps.
 
-
+\subsection{Architecture}
+ 
+  We used as a guideline a typical CNN architecture alternating convolutional layers and max-pooling layers and added several fully connected layers at the end of the network \cite{simonyan2014very}. All hidden layers are equipped with the rectification (ReLU) non-linearity. Batch normalization is used after each Conv layer and FC layer except the last layer. To measure the difference in performance brought by increasing number of convolutional layers, we have evaluated several configurations of Wind CNN and Pressure CNN. 
+  
+  The configurations we have evaluated for Wind CNN and Pressure CNN are outlined in Table \ref{table:vgg_archs}, one per column. All configurations follow the generic design described above, and differ only in depth. In Table \ref{table:neuron_nums} we have shown the number of learnable parameters in each of those configurations. We note that those configurations have almost the same number of learnable parameter despite their different depths. Training details and results can be found in the next chapter where all experiments are described.
+ 
 \begin{table}[]
 	\begin{center}
 		\caption{\textbf{ConvNet configurations}(shown in columns). The depth of the configurations increases from left(A) to the right(D), as more layers are added. The convolutional layer parametres are denoted as "conv(kernel size)-(number of output channels)". The ReLU activation layer and Batch normalization layers are not shown in figure }
@@ -85,6 +94,7 @@ Because of the different nature of the wind field images, geopotential field ima
 			\multicolumn{4}{|c|}{FC-2}                                                                                                                                                                                                                                                                                                                                          \\ \hline
 		\end{tabular}
 	\end{center}
+	\label{table:vgg_archs}
 \end{table}
 
 \begin{table}[]
@@ -95,29 +105,108 @@ Because of the different nature of the wind field images, geopotential field ima
 		Network              & A    & B    & C    & D    \\ \hline
 		Number of parameters & 2.27 & 2.33 & 2.75 & 2.67 \\ \hline
 	\end{tabular}
+	\label{table:neuron_nums}
 \end{table}
 
-\subsection{Neural Network for Past Tracks}
-Another important source of information is the previous displacements
-%($d_{lat},d_{long}$
-(latitude and longitude
-for $t-12h$ and $t-6h$). We designed a small neural network (two small fully connected layers) able to learn the future track from this past track.
 
-\subsection{Fusion Architecture for All Sources of Data}
 
-Because of the different nature of the wind field image and of the past track data, it is not straightforward to mix them as a common input to a bigger network. Instead, we first train separately the wind field CNN and the small past track neural network (NN) previously mentioned, and then we fuse their two last layers, and re-train them together (see Figure \ref{fig:schema}). %\textbf{(include citation on similar fused network?)}
+\section{Past tracks + meta NN}
+Another important source of information is the previous displacements and the other hand crafted features that we mentioned in the previous part of this chapter. Temporal patterns can be extracted from a storm's historical tracks. Other hand crafted features can also provide additional (and important) clue for prediction. We designed a small neural network (two small fully connected layers, the green stream in Fig.\ref{fig:fusion_arch}) able to learn the future track from this past track and other hand crafted data. The past displacements of a storm are defined as the storm's displacement in every 6 hours in history. An important question is how long should we take from a storm's past tracks. We have evaluated the network for the task of predicting storm displacement in 24 hours using different length of past tracks. We finally decided to use 2 past tracks (the displacement from $t-12h$ to $t-6h$ and from $t-6h$ to $t$) because we noted that using longer past tracks doesn't improve the performance significantly. 
+\begin{figure} 
+	\begin{center}
+		\epsfxsize=0.95\hsize \epsfbox{figs/fusion_details.pdf}
+	\end{center}
+	\caption{Connection of neurons in fusion layers before training fusion network. }
+	\label{fig:fusion_details}
+\end{figure}
+\section{Fusion Network}
+It is demonstrated that the three network: Wind CNN,  Pressure CNN,  Past tracks + Meta NN can independently predict a storm's future displacement. We then consider to improve the performance by integrating the three networks into a fusion network. Once the three individual stream networks are trained, we concatenate their certain number of last layers and add an additional layer at the end of the network as fused output layer. An example of fusion network is shown in Fig.\ref{fig:fusion_arch} where the last two layers of each stream networks are concatenated and merge into the fusion network. 
+
+Figure \ref{fig:fusion_details} zooms in the fusion layers and explains how neurons are connected before training the fusion network. After fusing, the connections in previous stream networks(blue, yellow and green) are retained, no connection exist between different streams. The fusion output (red in Figure \ref{fig:fusion_details}) is the average of the three stream networks' outputs. 
+
+We are also interested in different possible configurations of the fusion network. To be more specific, how many layers should be fused. We have carried out a through out evaluations on the performance of different configurations. Details and results will be shown in the next chapter. 
+
+
+
+
+
+
+
+
+\section{Implementation Framework}
+In the previous sections of the chapter we presented the details of the network configurations. In this section, we describe the algorithmic details of network training and evaluation in this research.
+
+\subsection{Input preprocessing}
+ Following the machine learning standard, we divided the entire dataset into train (60\%) / validation (20\%) / test (20\%). To avoid data leakage, we first separate all the storms into the three bins. Then, within each set, all time instants from the storms were treated  independently. It ensures that training examples, validation examples and test examples are extracted from different storms. Before being fed into the models, the input data is first standardized by subtracting mean value then dividing standard variation of each layer, computed on training set, from each pixel. 
+
+\subsection{Training}  
+Let $D = \{(x_w^1, x_p^1, x_{0d}^1, loc_t^1, loc_{t+\delta t}^1), ..., (x_w^n, x_p^n, x_{0d}^n, loc_t^n, loc_{t+\delta t}^n)\}$ be the labeled data for training our fusion network; with $x_w^i$, $x_p^i$, $x_{0d}^i$ denoting wind fields, pressure fields, 0d features respectively and $loc_t^i$, $loc_{t+\delta t}^i$ corresponding to the ground truth location at current time and after $\delta t$ time. $\delta t$ can be 6 hours, 12 hours, 18 hours, 24 hours... depending on the specific forecasting task. We train our model using a two-stage approach.
+
+
+\begin{enumerate}[leftmargin=2em]
+	\item \textbf{Training the stream networks: }\\
+	We first proceed by training the individual stream networks. For training Wind CNN, Let $F_{wind}$ be the mapping function of Wind CNN. Learning $F_{wind}$ requires the estimation of the network parameters $\theta_w$ which is carried out by minimizing the loss between the forecast storm location and the corresponding ground truth location.  The forecast value and ground truth is in latitude and longitude. We first transform their differences in latitude and longitude into distance in kilometers. Let $F_{transform}$ be the transformation function from differences in latitude and longitude to distance. Then we use Mean Squared Error (MSE) in kilometers as the loss function:
+	
+	\begin{equation}
+	\label{eq}
+	L(\theta_w) = \frac{1}{n}\sum_{i=1}^{n} \left \| {F_{transform}((F_{wind}(x_w^i; \theta_w)} + loc_{i\ t} ) - loc_{i\ t+\delta t} ) \right \| ^2
+	\end{equation}
+	Where n is the total number of instances. Using MSE as the loss function can effectively penalize on large errors. Training the Pressure CNN and Past tracks + meta NN can be performed by an analogous way. After training, the three stream networks can be used to perform separate prediction of each modality. 
+	\item \textbf{Training the fusion network: }\\
+	The training of the fusion network follows two stages. We divide the layers of the fusion network into 2 parts: fusion layers (layers that are fused) and stream layers (layers that are retained from stream networks). The division is clearly shown in Fig.\ref{fig:fusion_arch}. In the first stage, we optimize only the weights in the fusion layers (keeping the weights of the stream layers intact). In the second stage, we let the weights in the whole network be equally optimized. Let $F_{f}$ be the function of fusion network, $\theta_{f}$, $\theta_{s}$ be parameters of fusion layers and of stream layers. Analogous to Eq.\ref{eq}, the first stage's loss function would be:
+	
+	\begin{equation}
+	\label{eq_fusion_1}
+	L(\theta_{f}) = \frac{1}{n}\sum_{i=1}^{n} \left \| {F_{transform}((F_{f}(x_w^i, x_p^i, x_{0d}^i; \theta_{f})} + loc_{i\ t} ) - loc_{i\ t+\delta t} ) \right \| ^2
+	\end{equation}
+	
+	And second stage's loss function would be:
+	\begin{equation}
+	\label{eq_fusion_2}
+	L(\theta_{f}, \theta_{s}) = \frac{1}{n}\sum_{i=1}^{n} \left \| {F_{transform}((F_{f}(x_w^i, x_p^i, x_{0d}^i; \theta_{f}, \theta_{s})} + loc_{i\ t} ) - loc_{i\ t+\delta t} ) \right \| ^2
+	\end{equation}
+	
+	 We found that having the two stage of optimization augment the performance compared to optimize everything from the beginning. 
+	
+	
+	
+\end{enumerate}
+
+
+
+\subsection{Implementation Details}
+
+The training was performed by mini-batch gradient descent with Adam optimizer. The batch size is set to 256. The training is regularized by weight decay (the $L_2$ penalty multiplier set to 0.01). Initial learning rates are fine-tuned individually in each model. The weights of the model were initialized followed by He initialization\cite{he2015delving}. Each model converges within 200 epochs, all sample are permuted after each epoch. Each evaluation is repeated by 3 times with different randomization and then compute an average score. Our implementation uses PyTorch 4.0. All training and evaluation are processed on 2 TitanX GPUs with data parallelism\cite{KRIZHEVSKY2014}. 
+
 
 \chapter{Experiments and Result Analysis}
-\section{Evaluation Settings}
+The chapter is organized into four sections. The evaluation of configurations for Wind CNN and Pressure CNN is shown in the second section. After choosing the proper ConvNet configuration for each stream network, in the second chapter we describe the process of selecting fusion network configuration. In the third section we compare the performance of our approach with baseline and existing climate models. Finally the advantages are limitations are discussed in the last section.  
 
-\section{Training Details}
-The storms were randomly separated in 3 sets as follows: train (60\%) / valid (20\%) / test (20\%).
-%= 60\%-20\%-20\%.
-Then, within each set, all time instants were treated independently.
-As a loss function (quantity to optimise), we used the mean square error (MSE) in kilometers between the forecast and the true storm location at $t+6h$. We added an L2 penalty on the weights of the model (\emph{coef.}~$= 0.01$). The training was performed by the Adam optimizer.
-%based on backpropagation. 
+\section{Evaluation of ConvNet configurations}
 
-Our implementation uses PyTorch 4.0.  The training and testing took less than 1 hour on 4 TitanX GPUs with data parallelism \cite{krizhevsky2014one}.
+The final configurations of Wind CNN and Pressure CNN are confirmed via an evaluation on each candidate architecture in Table. \ref{table:arch_evaluation}. The 4 architectures are evaluated on 24 hours storm track prediction on validation set using only wind fields.
+
+
+
+
+The result of the evaluation on validation set is shown in Table \ref{table:arch_evaluation} With the increase of depth, we observed very unobvious improvement on the result. A possible reason could be that climate patterns are so simple that don't need more convolutional layers. Another possible reason is that it is underfitting due to lack of labeled training data. But still, more convolutional layers means that the network can learn features at more levels of abstraction. Finally we choose Network C after compromising between number of convolutional layers and computational efficiency.
+
+Another important experiment is to evaluate how adding more temporal part to the input data structure can improve the performance. We then added storm fields data at the same location at more consecutive time steps to input data. We process the input data on the same architecture and don't observe obvious improvement. Then we decided to use only information at $t$ and $t-6h$. 
+
+\begin{table}[]
+	\centering
+	\caption{ConvNet performance on 24 hours storm track prediction on validation set using wind fields}
+	\label{table:arch_evaluation}
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		Network & A & B & C & D \\ \hline
+		Mean Square Error (in kms) & 31430.08 & 31761.95 & 31552.91 & 31772.62 \\ \hline
+		Mean Absolute Error (in kms) & 145.43 & 146.62 & 145.5997 & 146.73 \\ \hline
+	\end{tabular}
+\end{table}
+
+
+
 
 
 \section{Results}
