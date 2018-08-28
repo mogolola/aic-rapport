@@ -180,34 +180,49 @@ The training was performed by mini-batch gradient descent with Adam optimizer. T
 
 
 \chapter{Experiments and Result Analysis}
-The chapter is organized into four sections. The evaluation of configurations for Wind CNN and Pressure CNN is shown in the second section. After choosing the proper ConvNet configuration for each stream network, in the second chapter we describe the process of selecting fusion network configuration. In the third section we compare the performance of our approach with baseline and existing climate models. Finally the advantages are limitations are discussed in the last section.  
+The chapter is organized into four sections. The evaluation of configurations for Wind CNN and Pressure CNN is shown in the first section. After choosing the proper ConvNet configuration for each stream network, in the second chapter we describe the process of selecting fusion network configuration. In the third section we evaluate our fusion network architecture with baseline and existing climate models. Finally the advantages are limitations are discussed in the last section.  
 
 \section{Evaluation of ConvNet configurations}
 
-The final configurations of Wind CNN and Pressure CNN are confirmed via an evaluation on each candidate architecture in Table. \ref{table:arch_evaluation}. The 4 architectures are evaluated on 24 hours storm track prediction on validation set using only wind fields.
+To determine the final configurations of Wind CNN, four candidate architectures shown in Table. \ref{table:arch_evaluation} are evaluated on 24 hours storm track prediction. The result of the evaluation on validation set is shown in Table \ref{table:arch_evaluation}. We give two scores: Mean Square Error(MSE) and Mean Absolute Error(MAE) respectively, the MAE denotes the mean prediction error in kilometers. With the increase of depth, we observed very unobvious improvement on the result. A possible reason could be that climate patterns are so simple that don't need more convolutional layers. Another possible reason is that it is underfitting due to lack of labeled training data. Nevertheless, more convolutional layers means that the network can learn features at more levels of abstraction. Finally we choose Network C after compromising between depth and computational efficiency.
 
-
-
-
-The result of the evaluation on validation set is shown in Table \ref{table:arch_evaluation} With the increase of depth, we observed very unobvious improvement on the result. A possible reason could be that climate patterns are so simple that don't need more convolutional layers. Another possible reason is that it is underfitting due to lack of labeled training data. But still, more convolutional layers means that the network can learn features at more levels of abstraction. Finally we choose Network C after compromising between number of convolutional layers and computational efficiency.
-
-Another important experiment is to evaluate how adding more temporal part to the input data structure can improve the performance. We then added storm fields data at the same location at more consecutive time steps to input data. We process the input data on the same architecture and don't observe obvious improvement. Then we decided to use only information at $t$ and $t-6h$. 
+Another experiment is to evaluate how adding more temporal part to the input data structure can improve the performance. We then added storm fields data at the same location at more consecutive time steps to input data. We process the input data on the same architecture and don't observe obvious improvement. Then we decided to use only information at $t$ and $t-6h$. 
 
 \begin{table}[]
 	\centering
 	\caption{ConvNet performance on 24 hours storm track prediction on validation set using wind fields}
 	\label{table:arch_evaluation}
-	\begin{tabular}{|c|c|c|c|c|}
+	\begin{tabular}{|c|c|c|}
 		\hline
-		Network & A & B & C & D \\ \hline
-		Mean Square Error (in kms) & 31430.08 & 31761.95 & 31552.91 & 31772.62 \\ \hline
-		Mean Absolute Error (in kms) & 145.43 & 146.62 & 145.5997 & 146.73 \\ \hline
+		Model(in Table. \ref{table:vgg_archs}) & Mean Sqaure Error (km\^2) & Mean Abosolute Error(km) \\ \hline
+		A & 31430.08 & 145.43  \\ \hline
+		B & 31761.95 & 146.62  \\ \hline
+		C & 31552.91 & 145.5997 \\ \hline
+		D & 31772.62 & 146.73 \\ \hline
+		
+	
 	\end{tabular}
 \end{table}
 
+\section{Comparison of fusion methods}
+After confirming stream networks' configuration, we then proceed to explore different fusion strategies. To answer the question raised in the precious chapter: what fusion strategy has the best performance, Two scenarios are considered. 1) Does fusing three streams outperforms fusing two streams or using single stream? 2) how many layers should be fused? 
+
+To answer the second question, we have evaluated 4 fusion networks that are based on the same pre-trained three stream networks and have different number of fusion layers. The result is shown in Table \ref{table:fus_compare}	
 
 
-
+\begin{table}[]
+	\centering
+	\caption{Comparison of fusion models performance on 24 hours storm track prediction}
+	\label{table:fus_compare}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		Model & Mean Sqaure Error(km\^2) & Mean Abosolute Error(km) \\ \hline
+		Fus network, 3 streams, fuse 2 FC & 25453.48 & 130.04 \\ \hline
+		Fus network, 3 streams, fuse 4 FC & 25628.22 & 130.27 \\ \hline
+		Fus network, 3 streams, fuse 6 FC & 25846.74 & 130.95 \\ \hline
+		Fus network, 3 streams, fuse 6 FC + 1 Conv layers & 25928.81 & 131.17 \\ \hline
+	\end{tabular}
+\end{table}
 
 \section{Results}
 
