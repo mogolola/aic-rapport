@@ -115,37 +115,36 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces General architecture: the three types of data are feeding three neural networks trained separately. The final fused network is re-trained before predicting the forecast track}}{12}{figure.4.2}}
 \newlabel{fig:fusion_arch}{{\M@TitleReference {4.2}{General architecture: the three types of data are feeding three neural networks trained separately. The final fused network is re-trained before predicting the forecast track}}{12}{General architecture: the three types of data are feeding three neural networks trained separately. The final fused network is re-trained before predicting the forecast track}{figure.4.2}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.4}Wind CNN and Pressure CNN}{12}{section.4.4}}
-\@writefile{toc}{\contentsline {subsection}{Architecture}{12}{section*.7}}
 \@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces \textbf  {ConvNet configurations}(shown in columns). The depth of the configurations increases from left(A) to the right(D), as more layers are added. The convolutional layer parametres are denoted as "conv(kernel size)-(number of output channels)". The ReLU activation layer and Batch normalization layers are not shown in figure }}{13}{table.4.1}}
-\newlabel{table:vgg_archs}{{\M@TitleReference {4.1}{Architecture}}{13}{Architecture}{table.4.1}{}}
+\newlabel{table:vgg_archs}{{\M@TitleReference {4.1}{Wind CNN and Pressure CNN}}{13}{Wind CNN and Pressure CNN}{table.4.1}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces Number of parameters (in millions)}}{13}{table.4.2}}
 \newlabel{table:neuron_nums}{{\M@TitleReference {4.2}{Number of parameters (in millions)}}{13}{Number of parameters (in millions)}{table.4.2}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.5}Past tracks + meta NN}{13}{section.4.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.6}Fusion Network}{13}{section.4.6}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Connection of neurons in fusion layers before training fusion network. }}{14}{figure.4.3}}
 \newlabel{fig:fusion_details}{{\M@TitleReference {4.3}{Connection of neurons in fusion layers before training fusion network. }}{14}{Connection of neurons in fusion layers before training fusion network. }{figure.4.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.6}Fusion Network}{14}{section.4.6}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.7}Implementation Framework}{14}{section.4.7}}
-\@writefile{toc}{\contentsline {subsection}{Input preprocessing}{15}{section*.8}}
-\@writefile{toc}{\contentsline {subsection}{Training}{15}{section*.9}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.7}Network Training Framework}{14}{section.4.7}}
+\@writefile{toc}{\contentsline {subsection}{Input preprocessing}{14}{section*.7}}
+\citation{he2015delving}
+\citation{KRIZHEVSKY2014}
+\@writefile{toc}{\contentsline {subsection}{Training}{15}{section*.8}}
 \newlabel{eq}{{4.1}{15}{Training}{equation.4.7.1}{}}
 \newlabel{eq_fusion_1}{{4.2}{15}{Training}{equation.4.7.2}{}}
 \newlabel{eq_fusion_2}{{4.3}{15}{Training}{equation.4.7.3}{}}
-\citation{he2015delving}
-\citation{KRIZHEVSKY2014}
-\@writefile{toc}{\contentsline {subsection}{Implementation Details}{16}{section*.10}}
-\@writefile{toc}{\contentsline {chapter}{\chapternumberline {5}Experiments and Result Analysis}{17}{chapter.5}}
+\@writefile{toc}{\contentsline {subsection}{Implementation Details}{15}{section*.9}}
+\@writefile{toc}{\contentsline {chapter}{\chapternumberline {5}Experiments}{17}{chapter.5}}
 \@writefile{toc}{\contentsline {section}{\numberline {5.1}Fusion Network Configuration}{17}{section.5.1}}
-\@writefile{toc}{\contentsline {subsection}{Selecting Stream Network Configuration}{17}{section*.11}}
+\@writefile{toc}{\contentsline {subsection}{Selecting Stream Network Configuration}{17}{section*.10}}
 \@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Performance of candidate configurations (Wind CNN) on 24 hours storm track prediction on validation set using wind fields}}{17}{table.5.1}}
 \newlabel{table:arch_evaluation}{{\M@TitleReference {5.1}{Performance of candidate configurations (Wind CNN) on 24 hours storm track prediction on validation set using wind fields}}{17}{Performance of candidate configurations (Wind CNN) on 24 hours storm track prediction on validation set using wind fields}{table.5.1}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces Comparison of fusion models performance on 24 hours storm track prediction on validation set}}{18}{table.5.2}}
 \newlabel{table:fus_compare}{{\M@TitleReference {5.2}{Comparison of fusion models performance on 24 hours storm track prediction on validation set}}{18}{Comparison of fusion models performance on 24 hours storm track prediction on validation set}{table.5.2}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {5.3}{\ignorespaces Comparison of fusion models performance on 24 hours storm track prediction on validation set}}{18}{table.5.3}}
 \newlabel{table:fus_compare_}{{\M@TitleReference {5.3}{Comparison of fusion models performance on 24 hours storm track prediction on validation set}}{18}{Comparison of fusion models performance on 24 hours storm track prediction on validation set}{table.5.3}{}}
-\@writefile{toc}{\contentsline {subsection}{Selecting Fusion Network Configuration}{18}{section*.12}}
+\@writefile{toc}{\contentsline {subsection}{Selecting Fusion Network Configuration}{18}{section*.11}}
 \@writefile{toc}{\contentsline {section}{\numberline {5.2}Comparison with existing forecasting models}{18}{section.5.2}}
-\@writefile{toc}{\contentsline {subsection}{Quantitative}{18}{section*.13}}
-\@writefile{toc}{\contentsline {subsection}{Qualitative}{18}{section*.14}}
+\@writefile{toc}{\contentsline {subsection}{Quantitative}{18}{section*.12}}
+\@writefile{toc}{\contentsline {subsection}{Qualitative}{18}{section*.13}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces 24h-forecast results on the test set (storms coming from all oceanic basins), in distance between predicted and real location. Baseline = previous displacement (going straight).}}{19}{figure.5.1}}
 \newlabel{fig:boxplots}{{\M@TitleReference {5.1}{24h-forecast results on the test set (storms coming from all oceanic basins), in distance between predicted and real location. Baseline = previous displacement (going straight).}}{19}{24h-forecast results on the test set (storms coming from all oceanic basins), in distance between predicted and real location. Baseline = previous displacement (going straight)}{figure.5.1}{}}
 \@writefile{toc}{\contentsline {chapter}{\chapternumberline {6}Conclusion and Discussion}{20}{chapter.6}}
@@ -170,7 +169,7 @@
 \bibcite{glorot2010understanding}{17}
 \bibcite{goldberg2014word2vec}{18}
 \bibcite{graves2013generating}{19}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{22}{chapter*.16}}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{22}{chapter*.15}}
 \bibcite{he2015delving}{20}
 \bibcite{he2016deep}{21}
 \bibcite{hochreiter1997long}{22}

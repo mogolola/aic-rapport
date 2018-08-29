@@ -21,9 +21,9 @@
 \BOOKMARK [1][-]{section.4.4}{Wind CNN and Pressure CNN}{chapter.4}% 21
 \BOOKMARK [1][-]{section.4.5}{Past tracks + meta NN}{chapter.4}% 22
 \BOOKMARK [1][-]{section.4.6}{Fusion Network}{chapter.4}% 23
-\BOOKMARK [1][-]{section.4.7}{Implementation Framework}{chapter.4}% 24
-\BOOKMARK [0][-]{chapter.5}{Experiments and Result Analysis}{}% 25
+\BOOKMARK [1][-]{section.4.7}{Network Training Framework}{chapter.4}% 24
+\BOOKMARK [0][-]{chapter.5}{Experiments}{}% 25
 \BOOKMARK [1][-]{section.5.1}{Fusion Network Configuration}{chapter.5}% 26
 \BOOKMARK [1][-]{section.5.2}{Comparison with existing forecasting models}{chapter.5}% 27
 \BOOKMARK [0][-]{chapter.6}{Conclusion and Discussion}{}% 28
-\BOOKMARK [0][-]{chapter*.16}{Bibliography}{}% 29
+\BOOKMARK [0][-]{chapter*.15}{Bibliography}{}% 29
