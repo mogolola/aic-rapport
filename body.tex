@@ -167,6 +167,8 @@ Let $D = \{(x_w^1, x_p^1, x_{0d}^1, loc_t^1, loc_{t+\delta t}^1), ..., (x_w^n, x
 	\end{equation}
 	
 	 We found that having the two stage of optimization augment the performance compared to optimize everything from the beginning. 
+
+	 
 	
 	
 	
@@ -182,15 +184,16 @@ The training was performed by mini-batch gradient descent with Adam optimizer. T
 \chapter{Experiments and Result Analysis}
 The chapter is organized into four sections. The evaluation of configurations for Wind CNN and Pressure CNN is shown in the first section. After choosing the proper ConvNet configuration for each stream network, in the second chapter we describe the process of selecting fusion network configuration. In the third section we evaluate our fusion network architecture with baseline and existing climate models. Finally the advantages are limitations are discussed in the last section.  
 
-\section{Evaluation of ConvNet configurations}
-
-To determine the final configurations of Wind CNN, four candidate architectures shown in Table. \ref{table:arch_evaluation} are evaluated on 24 hours storm track prediction. The result of the evaluation on validation set is shown in Table \ref{table:arch_evaluation}. We give two scores: Mean Square Error(MSE) and Mean Absolute Error(MAE) respectively, the MAE denotes the mean prediction error in kilometers. With the increase of depth, we observed very unobvious improvement on the result. A possible reason could be that climate patterns are so simple that don't need more convolutional layers. Another possible reason is that it is underfitting due to lack of labeled training data. Nevertheless, more convolutional layers means that the network can learn features at more levels of abstraction. Finally we choose Network C after compromising between depth and computational efficiency.
+\section{Fusion Network Configuration}
+Selecting the fusion network's configuration can be seen as a special hyper-parameter tunning. In the previous chapter we explained the method of confirming the fusion network configuration In this section we will describe the related experiments and results. Evaluations about selecting network configurations are processed on validation set since it is part of hyper-parameter tunning. The process can be identified into two steps. Our fusion approach aims at combining the stream networks. In the first step, the stream networks' configurations are determined. In the second step, we explore different fusion strategies and select the fusion network configuration with best performance. The two steps are described as follows:
+\subsection{Selecting Stream Network Configuration}
+In the previous chapter, we have outlined the four candidate architectures (shown in Table. \ref{table:arch_evaluation}) for Wind CNN and Pressure CNN. We evaluated their performance on 24 hours storm track prediction. The result of the evaluation on validation set (Wind CNN) is shown in Table \ref{table:arch_evaluation}. We give two scores: Mean Square Error(MSE) and Mean Absolute Error(MAE). Specifically the MAE denotes the model's mean prediction error in kilometers. With the increase of depth, we observed very unobvious improvement on the result. A possible reason could be that climate patterns are so simple that don't need more convolutional layers. Another possible reason is that it is underfitting due to lack of labeled training data. Nevertheless, more convolutional layers means that the network can learn features at more levels of abstraction. Finally we choose Network C after compromising between depth and computational efficiency.
 
 Another experiment is to evaluate how adding more temporal part to the input data structure can improve the performance. We then added storm fields data at the same location at more consecutive time steps to input data. We process the input data on the same architecture and don't observe obvious improvement. Then we decided to use only information at $t$ and $t-6h$. 
 
 \begin{table}[]
 	\centering
-	\caption{ConvNet performance on 24 hours storm track prediction on validation set using wind fields}
+	\caption{Performance of candidate configurations (Wind CNN) on 24 hours storm track prediction on validation set using wind fields}
 	\label{table:arch_evaluation}
 	\begin{tabular}{|c|c|c|}
 		\hline
@@ -204,19 +207,25 @@ Another experiment is to evaluate how adding more temporal part to the input dat
 	\end{tabular}
 \end{table}
 
-\section{Comparison of fusion methods}
-After confirming stream networks' configuration, we then proceed to explore different fusion strategies. To answer the question raised in the precious chapter: what fusion strategy has the best performance, Two scenarios are considered. 1) Does fusing three streams outperforms fusing two streams or using single stream? 2) how many layers should be fused? 
 
-To answer the second question, we have evaluated 4 fusion networks that are based on the same pre-trained three stream networks and have different number of fusion layers. The result is shown in Table \ref{table:fus_compare}	
+
+\subsection{Selecting Fusion Network Configuration}
+After confirming stream networks' configuration, we then proceed to explore different fusion strategies.To figure out what fusion strategy has the best performance, two scenarios are considered. 1) how many layers should be fused? 2) Does fusing three streams outperforms fusing two streams or using single stream?
+
+To answer the first question, we have evaluated 4 fusion networks that are based on the same three pre-trained stream networks and only differ in number of fused layers. The result is shown in Table \ref{table:fus_compare}. The fusion network that fuse 2 FC performs slightly better than others but generally the 4 networks have the same level performance. 
+
+To answer the second question, we have compared the fusion network fusing all three streams with networks fusing two streams and single stream networks. The result is shown in Table \ref{table:fus_compare_}. We can clearly see the improvement of fusing all three stream networks with respect to fusing two stream networks and using single stream networks. 
+
+Figure \ref{fig:boxplots} shows the 24h-forecast results on the test set in absolute distance error. It is verified that the fusion network fusing all three stream networks outperform other networks in Table \ref{table:fus_compare_}. 
 
 
 \begin{table}[]
 	\centering
-	\caption{Comparison of fusion models performance on 24 hours storm track prediction}
+	\caption{Comparison of fusion models performance on 24 hours storm track prediction on validation set}
 	\label{table:fus_compare}
 	\begin{tabular}{|c|c|c|}
 		\hline
-		Model & Mean Sqaure Error(km\^2) & Mean Abosolute Error(km) \\ \hline
+		Model & Mean Sqaure Error($km^2$) & Mean Abosolute Error($km$) \\ \hline
 		Fus network, 3 streams, fuse 2 FC & 25453.48 & 130.04 \\ \hline
 		Fus network, 3 streams, fuse 4 FC & 25628.22 & 130.27 \\ \hline
 		Fus network, 3 streams, fuse 6 FC & 25846.74 & 130.95 \\ \hline
@@ -224,15 +233,35 @@ To answer the second question, we have evaluated 4 fusion networks that are base
 	\end{tabular}
 \end{table}
 
-\section{Results}
+
+\begin{table}[]
+	\centering
+	\caption{Comparison of fusion models performance on 24 hours storm track prediction on validation set}
+	\label{table:fus_compare_}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		Model & Mean Sqaure Error($km^2$) & Mean Abosolute Error($km$) \\ \hline
+		0D NN & 51367.42 & 180.00 \\ \hline
+		Pres. CNN, & 39387.76 & 164.91 \\ \hline
+		Wind CNN & 30426.02 & 142.71 \\ \hline
+		Fus network, 0D + Wind, fuse 2 FC  & 28723.56 & 136.64 \\ \hline
+		Fus network, Pres. + Wind, fuse 2 FC & 28045.30 & 137.26 \\ \hline
+		Fus network, Three streams, fuse 2 FC & 25453.48 & 130.04 \\ \hline
+		
+		
+	\end{tabular}
+\end{table}
 
 \begin{figure}
 	\begin{center}
-		\epsfxsize=0.50\hsize \epsfbox{figs/MAE_all_6hforecast_paper.pdf}
+		\epsfxsize=0.80\hsize \epsfbox{figs/arch_compare.png}
 	\end{center}
-	\caption{6h-forecast results on the test set (storms coming from all oceanic basins), in distance between predicted and real location. Baseline = previous displacement (going straight).}
+	\caption{24h-forecast results on the test set (storms coming from all oceanic basins), in distance between predicted and real location. Baseline = previous displacement (going straight).}
 	\label{fig:boxplots}
 \end{figure}
+
+\section{Comparison with existing forecasting models}
+In this section we compare our fusion model CNN on 24 hours forecast with the existing forecasting models: OFCL and BCD5. In addition, we define the baseline prediction as equal to four times the last displacement (from $t-6h$ to $t$). 
 
 Figure \ref{fig:boxplots} shows the 6h-forecast results on the test set in absolute distance error. We define the baseline prediction as equal to the last displacement (from $t-6h$ to $t$). We can see the improvement of fusing networks (mean error $\bar{e}=32.9km$) with respect to the wind field CNN alone ($\bar{e}=40.7km$) or the track neural network alone ($\bar{e}=35km$).
 We have plotted in Figure \ref{fig:track} an example of 6h-forecasts on one storm track for the baseline and for our prediction (fusion networks). Our forecast predicts well, even in the case of change of direction or speed.

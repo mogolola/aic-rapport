@@ -23,9 +23,8 @@
 \BOOKMARK [1][-]{section.4.6}{Fusion Network}{chapter.4}% 23
 \BOOKMARK [1][-]{section.4.7}{Implementation Framework}{chapter.4}% 24
 \BOOKMARK [0][-]{chapter.5}{Experiments and Result Analysis}{}% 25
-\BOOKMARK [1][-]{section.5.1}{Evaluation of ConvNet configurations}{chapter.5}% 26
-\BOOKMARK [1][-]{section.5.2}{Comparison of fusion methods}{chapter.5}% 27
-\BOOKMARK [1][-]{section.5.3}{Results}{chapter.5}% 28
-\BOOKMARK [1][-]{section.5.4}{Result Analysis}{chapter.5}% 29
-\BOOKMARK [0][-]{chapter.6}{Conclusion and Discussion}{}% 30
-\BOOKMARK [0][-]{chapter*.14}{Bibliography}{}% 31
+\BOOKMARK [1][-]{section.5.1}{Fusion Network Configuration}{chapter.5}% 26
+\BOOKMARK [1][-]{section.5.2}{Comparison with existing forecasting models}{chapter.5}% 27
+\BOOKMARK [1][-]{section.5.3}{Result Analysis}{chapter.5}% 28
+\BOOKMARK [0][-]{chapter.6}{Conclusion and Discussion}{}% 29
+\BOOKMARK [0][-]{chapter*.16}{Bibliography}{}% 30

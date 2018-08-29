@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.7.21)  28 AUG 2018 11:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.7.21)  29 AUG 2018 09:07
 entering extended mode
 **./rapport_m2_AIC.tex
 (rapport_m2_AIC.tex
@@ -1228,17 +1228,17 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-<logos/upsay.pdf, id=130, 280.04625pt x 94.3525pt>
+<logos/upsay.pdf, id=126, 280.04625pt x 94.3525pt>
 File: logos/upsay.pdf Graphic file (type pdf)
 <use logos/upsay.pdf>
 Package pdftex.def Info: logos/upsay.pdf  used on input line 84.
 (pdftex.def)             Requested size: 168.90076pt x 56.9055pt.
-<logos/ups.png, id=131, 318.9516pt x 170.0754pt>
+<logos/ups.png, id=127, 318.9516pt x 170.0754pt>
 File: logos/ups.png Graphic file (type png)
 <use logos/ups.png>
 Package pdftex.def Info: logos/ups.png  used on input line 85.
 (pdftex.def)             Requested size: 106.71439pt x 56.9055pt.
-<logos/limsi.png, id=133, 285.065pt x 148.555pt>
+<logos/limsi.png, id=129, 285.065pt x 148.555pt>
 File: logos/limsi.png Graphic file (type png)
 <use logos/limsi.png>
 Package pdftex.def Info: logos/limsi.png  used on input line 93.
@@ -1287,7 +1287,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-msb.cfg"
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-<logos/lri.png, id=134, 88.33pt x 85.31876pt>
+<logos/lri.png, id=130, 88.33pt x 85.31876pt>
 File: logos/lri.png Graphic file (type png)
 <use logos/lri.png>
 Package pdftex.def Info: logos/lri.png  used on input line 98.
@@ -1364,12 +1364,12 @@ as been already used, duplicate ignored
                                                   
 l.64 
      ]
-<figs/hurricane_section.png, id=243, 257.16075pt x 118.64325pt>
+<figs/hurricane_section.png, id=238, 257.16075pt x 118.64325pt>
 File: figs/hurricane_section.png Graphic file (type png)
 <use figs/hurricane_section.png>
 Package pdftex.def Info: figs/hurricane_section.png  used on input line 67.
 (pdftex.def)             Requested size: 320.09349pt x 147.67911pt.
-<figs/Katrina.png, id=250, 642.4pt x 397.485pt>
+<figs/Katrina.png, id=245, 642.4pt x 397.485pt>
 File: figs/Katrina.png Graphic file (type png)
 <use figs/Katrina.png>
 Package pdftex.def Info: figs/Katrina.png  used on input line 82.
@@ -1394,7 +1394,7 @@ Package xcolor Warning: Incompatible color definition on input line 96.
 
 Package xcolor Warning: Incompatible color definition on input line 96.
 
-<figs/storm_shema.png, id=282, 487.06969pt x 249.18094pt>
+<figs/storm_shema.png, id=277, 487.06969pt x 249.18094pt>
 File: figs/storm_shema.png Graphic file (type png)
 <use figs/storm_shema.png>
 Package pdftex.def Info: figs/storm_shema.png  used on input line 103.
@@ -1409,7 +1409,7 @@ has been already used, duplicate ignored
 l.116 F
        or most deep learning practitioners, Recurrent Neural Network(RNN) is...
  <./figs/storm_shema.png>] [8]
-<figs/tLKYz.png, id=332, 1076.02pt x 319.1925pt>
+<figs/tLKYz.png, id=327, 1076.02pt x 319.1925pt>
 File: figs/tLKYz.png Graphic file (type png)
 <use figs/tLKYz.png>
 Package pdftex.def Info: figs/tLKYz.png  used on input line 133.
@@ -1427,7 +1427,7 @@ Package xcolor Warning: Incompatible color definition on input line 24.
 
 Package xcolor Warning: Incompatible color definition on input line 24.
 
-<figs/all_storms.png, id=345, 1020.4524pt x 516.0078pt>
+<figs/all_storms.png, id=340, 1020.4524pt x 516.0078pt>
 File: figs/all_storms.png Graphic file (type png)
 <use figs/all_storms.png>
 Package pdftex.def Info: figs/all_storms.png  used on input line 30.
@@ -1444,7 +1444,7 @@ l.41 \section
 
 pdfTeX warning: pdflatex.exe (file ./figs/fusion_network.pdf): PDF inclusion: f
 ound PDF version <1.7>, but at most version <1.5> allowed
-<figs/fusion_network.pdf, id=362, 1009.97327pt x 625.97867pt>
+<figs/fusion_network.pdf, id=357, 1009.97327pt x 625.97867pt>
 File: figs/fusion_network.pdf Graphic file (type pdf)
 <use figs/fusion_network.pdf>
 Package pdftex.def Info: figs/fusion_network.pdf  used on input line 63.
@@ -1460,7 +1460,7 @@ l.77   T
 
 pdfTeX warning: pdflatex.exe (file ./figs/fusion_details.pdf): PDF inclusion: f
 ound PDF version <1.7>, but at most version <1.5> allowed
-<figs/fusion_details.pdf, id=458, 963.6pt x 542.025pt>
+<figs/fusion_details.pdf, id=453, 963.6pt x 542.025pt>
 File: figs/fusion_details.pdf Graphic file (type pdf)
 <use figs/fusion_details.pdf>
 Package pdftex.def Info: figs/fusion_details.pdf  used on input line 117.
@@ -1485,22 +1485,11 @@ same identifier (name{figure.4.3}) has been already used, duplicate ignored
 l.141 
        <./figs/fusion_details.pdf>] [15] [16]
 
-Package xcolor Warning: Incompatible color definition on input line 182.
+Package xcolor Warning: Incompatible color definition on input line 184.
 
 
-Package xcolor Warning: Incompatible color definition on input line 182.
+Package xcolor Warning: Incompatible color definition on input line 184.
 
-
-Overfull \hbox (64.19899pt too wide) in paragraph at lines 217--225
- [][] 
- []
-
-<figs/MAE_all_6hforecast_paper.pdf, id=542, 675.36508pt x 428.4559pt>
-File: figs/MAE_all_6hforecast_paper.pdf Graphic file (type pdf)
-<use figs/MAE_all_6hforecast_paper.pdf>
-Package pdftex.def Info: figs/MAE_all_6hforecast_paper.pdf  used on input line 
-231.
-(pdftex.def)             Requested size: 213.39566pt x 135.37619pt.
 [17
 
 pdfTeX warning (ext4): destination with the same identifier (name{table.5.1}) h
@@ -1508,47 +1497,66 @@ as been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.239 
+l.214 
       ]
-<figs/storm_track3_new2.pdf, id=551, 358.88364pt x 435.28093pt>
+Overfull \hbox (65.06499pt too wide) in paragraph at lines 226--234
+ [][] 
+ []
+
+
+Overfull \hbox (11.95334pt too wide) in paragraph at lines 241--253
+ [][] 
+ []
+
+<figs/arch_compare.png, id=546, 732.93825pt x 451.6875pt>
+File: figs/arch_compare.png Graphic file (type png)
+<use figs/arch_compare.png>
+Package pdftex.def Info: figs/arch_compare.png  used on input line 257.
+(pdftex.def)             Requested size: 341.43436pt x 210.41847pt.
+<figs/storm_track3_new2.pdf, id=549, 358.88364pt x 435.28093pt>
 File: figs/storm_track3_new2.pdf Graphic file (type pdf)
 <use figs/storm_track3_new2.pdf>
-Package pdftex.def Info: figs/storm_track3_new2.pdf  used on input line 243.
+Package pdftex.def Info: figs/storm_track3_new2.pdf  used on input line 272.
 (pdftex.def)             Requested size: 213.39566pt x 258.82599pt.
-) (conclu.tex [18pdfTeX warning (ext4): destination with the same identifier (n
-ame{table.5.2}) has been already used, duplicate ignored
+[18pdfTeX warning (ext4): destination with the same identifier (name{table.5.2}
+) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.22 \chapter
-             {Conclusion and Discussion}pdfTeX warning (ext4): destination with
- the same identifier (name{figure.5.1}) has been already used, duplicate ignore
-d
+l.280 
+      pdfTeX warning (ext4): destination with the same identifier (name{table.5
+.3}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.22 \chapter
-             {Conclusion and Discussion} <./figs/MAE_all_6hforecast_paper.pdf>]
-[19pdfTeX warning (ext4): destination with the same identifier (name{figure.5.2
-}) has been already used, duplicate ignored
+l.280 
+      ] [19pdfTeX warning (ext4): destination with the same identifier (name{fi
+gure.5.1}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.22 \chapter
-             {Conclusion and Discussion} <./figs/storm_track3_new2.pdf>]
+l.280 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+5.2}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.280 
+       <./figs/arch_compare.png> <./figs/storm_track3_new2.pdf>]) (conclu.tex
+[20]
 
 Package xcolor Warning: Incompatible color definition on input line 22.
 
 
 Package xcolor Warning: Incompatible color definition on input line 22.
 
-) [20
+) [21
 
 ]
 
 Package xcolor Warning: Incompatible color definition on input line 173.
 
-(rapport_m2_AIC.bbl [21
+(rapport_m2_AIC.bbl [22
 
 ]
 
@@ -1569,9 +1577,9 @@ Underfull \hbox (badness 2065) in paragraph at lines 47--51
 / / www . universite-[]paris-[]saclay . fr / en / recherche /
  []
 
-[22
+[23
 
-] [23]) [24]
+] [24]) [25]
 \tf@toc=\write7
 \openout7 = `rapport_m2_AIC.toc'.
 
@@ -1580,9 +1588,15 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 183.
  (rapport_m2_AIC.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 183.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 183.
-Package rerunfilecheck Info: File `rapport_m2_AIC.out' has not changed.
-(rerunfilecheck)             Checksum: C65F324BAA777AF0595AE914324B5FE4;2093.
 
+
+Package rerunfilecheck Warning: File `rapport_m2_AIC.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `rapport_m2_AIC.out':
+(rerunfilecheck)             Before: FA7849CF1E25E0422D59A9A7A4058F18;2009
+(rerunfilecheck)             After:  A4012CAEED8CB7EA347805BA848974FB;2045.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1592,11 +1606,11 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 183.
  ) 
 Here is how much of TeX's memory you used:
- 25754 strings out of 492973
- 480104 string characters out of 3135941
- 741993 words of memory out of 3000000
+ 25759 strings out of 492973
+ 480076 string characters out of 3135941
+ 742308 words of memory out of 3000000
  28869 multiletter control sequences out of 15000+200000
- 70460 words of font info for 113 fonts, out of 3000000 for 9000
+ 70543 words of font info for 114 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  52i,16n,67p,1720b,519s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/M
@@ -1614,9 +1628,9 @@ m Files/MiKTeX 2.9/fonts/type1/public/lm/lmro10.pfb><C:/Program Files/MiKTeX 2.
 9/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
 ublic/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.p
 fb>
-Output written on rapport_m2_AIC.pdf (27 pages, 3071720 bytes).
+Output written on rapport_m2_AIC.pdf (28 pages, 3069491 bytes).
 PDF statistics:
- 1240 PDF objects out of 1440 (max. 8388607)
- 135 named destinations out of 1000 (max. 500000)
- 22342 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 1108 PDF objects out of 1200 (max. 8388607)
+ 138 named destinations out of 1000 (max. 500000)
+ 22334 words of extra memory for PDF output out of 24883 (max. 10000000)
 
