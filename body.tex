@@ -118,7 +118,7 @@ Another important source of information is the previous displacements and the ot
 	\label{fig:fusion_details}
 \end{figure}
 \section{Fusion Network}
-It is demonstrated that the three network: Wind CNN,  Pressure CNN,  Past tracks + Meta NN can independently predict a storm's future displacement. We then consider improving the performance by integrating the three networks into a fusion network. Once the three individual stream networks are trained, we concatenate their certain number of last layers and add a layer at the end of the network as the fused output layer. An example of fusion network is shown in Fig.\ref{fig:fusion_arch} where the last two layers of each stream networks are concatenated and merge into the fusion network. 
+It is demonstrated that the three network: Wind CNN,  Pressure CNN,  Past tracks + Meta NN can independently predict a storm's future displacement. We then consider improving the performance by integrating the three networks into a fusion network. Once the three individual stream networks are trained, we concatenate their certain number of last layers and add a layer at the end of the network as the fused output layer. An example of fusion network is shown in Fig.\ref{fig:fusion_arch} where the last two layers of each stream networks are concatenated and merged into the fusion network. 
 
 Figure \ref{fig:fusion_details} zooms in the fusion layers and explains how neurons are connected before training the fusion network. After fusing, the connections in previous stream networks(blue, yellow and green) are retained, no connection exists between different streams. The fusion output (red in Figure \ref{fig:fusion_details}) is the average of the three stream networks' outputs. 
 
@@ -215,7 +215,7 @@ Figure \ref{fig:boxplots} shows the 24h-forecast results on the test set in abso
 
 \begin{table}[]
 	\centering
-	\caption{Comparison of fusion models performance on 24 hours storm track prediction on validation set}
+	\caption{Comparison of fusion networks that fuse different number of layers on 24 hours storm track prediction on validation set}
 	\label{table:fus_compare}
 	\begin{tabular}{|c|c|c|}
 		\hline
@@ -230,7 +230,7 @@ Figure \ref{fig:boxplots} shows the 24h-forecast results on the test set in abso
 
 \begin{table}[]
 	\centering
-	\caption{Comparison of fusion models performance on 24 hours storm track prediction on validation set}
+	\caption{Comparison of fusion networks and stream networks on 24 hours storm track prediction on validation set}
 	\label{table:fus_compare_}
 	\begin{tabular}{|c|c|c|}
 		\hline
@@ -250,7 +250,7 @@ Figure \ref{fig:boxplots} shows the 24h-forecast results on the test set in abso
 	\begin{center}
 		\epsfxsize=0.80\hsize \epsfbox{figs/arch_compare.png}
 	\end{center}
-	\caption{24h-forecast results on the test set (storms coming from all oceanic basins), in distance between predicted and real location. Baseline = previous displacement (going straight).}
+	\caption{24h-forecast results on the test set (storms coming from all oceanic basins), in distance between predicted and real location.}
 	\label{fig:boxplots}
 \end{figure}
 
