@@ -176,16 +176,14 @@ The training was performed by mini-batch gradient descent with Adam optimizer. T
 
 
 \chapter{Experiments}
-We have 
+In this section, we describe important experiments in the research. We first determine the best-performing fusion network setting followed by a two-step manner on the validation set and evaluate it on the test set. Then we compare our fusion network with the existing forecast models under the same criterion. 
 
-The chapter is organized into four sections. The evaluation of configurations for Wind CNN and Pressure CNN is shown in the first section. After choosing the proper ConvNet configuration for each stream network, in the second chapter we describe the process of selecting fusion network configuration. In the third section we evaluate our fusion network architecture with baseline and existing climate models. Finally the advantages are limitations are discussed in the last section.  
-
-\section{Fusion Network Configuration}
-Selecting the fusion network's configuration can be seen as a special hyper-parameter tunning. In the previous chapter we explained the method of confirming the fusion network configuration In this section we will describe the related experiments and results. Evaluations about selecting network configurations are processed on validation set since it is part of hyper-parameter tunning. The process can be identified into two steps. Our fusion approach aims at combining the stream networks. In the first step, the stream networks' configurations are determined. In the second step, we explore different fusion strategies and select the fusion network configuration with best performance. The two steps are described as follows:
+\section{Configurations comparison}
+Selecting the fusion network's configuration can be seen as a special hyper-parameter tunning. In the previous chapter, we explained the method of designing the fusion network configuration. In this section, we will describe the related experiments and results. Evaluations about selecting network configurations are processed on validation set since it is part of hyper-parameter tunning. The process can be identified into two steps. Our fusion approach aims at combining the stream networks. In the first step, the stream networks' configurations are determined. In the second step, we explore different fusion strategies and select the fusion network configuration with the best performance. The two steps are described as follows:
 \subsection{Selecting Stream Network Configuration}
-In the previous chapter, we have outlined the four candidate architectures (shown in Table. \ref{table:arch_evaluation}) for Wind CNN and Pressure CNN. We evaluated their performance on 24 hours storm track prediction. The result of the evaluation on validation set (Wind CNN) is shown in Table \ref{table:arch_evaluation}. We give two scores: Mean Square Error(MSE) and Mean Absolute Error(MAE). Specifically the MAE denotes the model's mean prediction error in kilometers. With the increase of depth, we observed very unobvious improvement on the result. A possible reason could be that climate patterns are so simple that don't need more convolutional layers. Another possible reason is that it is underfitting due to lack of labeled training data. Nevertheless, more convolutional layers means that the network can learn features at more levels of abstraction. Finally we choose Network C after compromising between depth and computational efficiency.
+In the previous chapter, we have outlined the four candidate architectures (shown in Table. \ref{table:arch_evaluation}) for Wind CNN and Pressure CNN. We evaluated their performance on 24 hours of storm track prediction. The result of the evaluation on validation set (Wind CNN) is shown in Table \ref{table:arch_evaluation}. We give two scores: Mean Square Error(MSE) and Mean Absolute Error(MAE). Specifically, the MAE denotes the model's mean absolute prediction error in kilometers. With the increase of depth, we observed very unobvious improvement on the result. A possible reason could be that climate patterns are so simple that don't need more convolutional layers. Another possible reason is that it is underfitting due to lack of labeled training data. Nevertheless, more convolutional layers mean that the network can learn features at more levels of abstraction. Finally, we choose Network C after compromising between depth and computational efficiency.
 
-Another experiment is to evaluate how adding more temporal part to the input data structure can improve the performance. We then added storm fields data at the same location at more consecutive time steps to input data. We process the input data on the same architecture and don't observe obvious improvement. Then we decided to use only information at $t$ and $t-6h$. 
+Another experiment is to evaluate how adding more temporal parts to the input data structure can improve the performance. We then added storm fields data at the same location at more consecutive time steps to input data. We process the input data on the same architecture and don't observe noticeable improvement. Then we decided to use only information at $t$ and $t-6h$. 
 
 \begin{table}[]
 	\centering
@@ -206,11 +204,11 @@ Another experiment is to evaluate how adding more temporal part to the input dat
 
 
 \subsection{Selecting Fusion Network Configuration}
-After confirming stream networks' configuration, we then proceed to explore different fusion strategies.To figure out what fusion strategy has the best performance, two scenarios are considered. 1) how many layers should be fused? 2) Does fusing three streams outperforms fusing two streams or using single stream?
+After confirming the stream networks' configuration, we then proceed to explore different fusion strategies. Therefore two scenarios are considered: 1) how many layers should be fused? 2) Does fusing three streams outperforms fusing two streams or using single stream?
 
-To answer the first question, we have evaluated 4 fusion networks that are based on the same three pre-trained stream networks and only differ in number of fused layers. The result is shown in Table \ref{table:fus_compare}. The fusion network that fuse 2 FC performs slightly better than others but generally the 4 networks have the same level performance. 
+To answer the first question, we have evaluated four fusion networks that are based on the same three pre-trained stream networks and only differ in the number of fused layers. The result is shown in Table \ref{table:fus_compare}. The fusion network that fuses 2 FC performs slightly better than others, but generally, the four networks have the same level of performance. 
 
-To answer the second question, we have compared the fusion network fusing all three streams with networks fusing two streams and single stream networks. The result is shown in Table \ref{table:fus_compare_}. We can clearly see the improvement of fusing all three stream networks with respect to fusing two stream networks and using single stream networks. 
+To answer the second question, we have compared the fusion network fusing all three streams with networks fusing two streams and single stream networks. The result is shown in Table \ref{table:fus_compare_}. We can see the improvement of fusing all three stream networks concerning fusing two stream networks or using single stream networks. 
 
 Figure \ref{fig:boxplots} shows the 24h-forecast results on the test set in absolute distance error. It is verified that the fusion network fusing all three stream networks outperform other networks in Table \ref{table:fus_compare_}. 
 
@@ -257,7 +255,7 @@ Figure \ref{fig:boxplots} shows the 24h-forecast results on the test set in abso
 \end{figure}
 
 \section{Comparison with existing forecasting models}
-In this section we compare our fusion model CNN on 24 hours forecast with the existing forecasting models: OFCL and BCD5. BCD5 is a statistical model which is often used to benchmark other hurricane track forecasting methods. OFCL is the National Hurricane Center (NHC) official forecast. In general the performance of these models vary per year. With increased computational power, the performance of OFCL is constantly improving. In addition, we define the baseline prediction as equal to four times the last displacement (from $t-6h$ to $t$). 
+In this section, we compare our fusion model CNN on 24 hours forecast with the existing forecasting models: OFCL and BCD5. BCD5 is a statistical model which is often used to benchmark other hurricane track forecasting methods. OFCL is the National Hurricane Center (NHC) official forecast. In general, the performance of these models varies per year. With increased computational power, the performance of OFCL is constantly improving. In addition, we define the baseline prediction as equal to four times the last displacement (from $t-6h$ to $t$). 
 
 
 

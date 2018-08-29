@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.7.21)  29 AUG 2018 12:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.7.21)  29 AUG 2018 12:36
 entering extended mode
 **./rapport_m2_AIC.tex
 (rapport_m2_AIC.tex
@@ -1495,21 +1495,21 @@ as been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.210 
+l.208 
       ]
-Overfull \hbox (65.06499pt too wide) in paragraph at lines 222--230
+Overfull \hbox (65.06499pt too wide) in paragraph at lines 220--228
  [][] 
  []
 
 
-Overfull \hbox (11.95334pt too wide) in paragraph at lines 237--249
+Overfull \hbox (11.95334pt too wide) in paragraph at lines 235--247
  [][] 
  []
 
 <figs/arch_compare.png, id=540, 732.93825pt x 451.6875pt>
 File: figs/arch_compare.png Graphic file (type png)
 <use figs/arch_compare.png>
-Package pdftex.def Info: figs/arch_compare.png  used on input line 253.
+Package pdftex.def Info: figs/arch_compare.png  used on input line 251.
 (pdftex.def)             Requested size: 341.43436pt x 210.41847pt.
 ) (conclu.tex [18pdfTeX warning (ext4): destination with the same identifier (n
 ame{table.5.2}) has been already used, duplicate ignored
@@ -1576,9 +1576,15 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 183.
  (rapport_m2_AIC.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 183.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 183.
-Package rerunfilecheck Info: File `rapport_m2_AIC.out' has not changed.
-(rerunfilecheck)             Checksum: F59025D827EB65DD937C8D71361390B6;1964.
 
+
+Package rerunfilecheck Warning: File `rapport_m2_AIC.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `rapport_m2_AIC.out':
+(rerunfilecheck)             Before: F59025D827EB65DD937C8D71361390B6;1964
+(rerunfilecheck)             After:  3216C524120C044699A69819EC005C90;1961.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1610,7 +1616,7 @@ m Files/MiKTeX 2.9/fonts/type1/public/lm/lmro10.pfb><C:/Program Files/MiKTeX 2.
 9/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
 ublic/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.p
 fb>
-Output written on rapport_m2_AIC.pdf (27 pages, 2993022 bytes).
+Output written on rapport_m2_AIC.pdf (27 pages, 2992874 bytes).
 PDF statistics:
  674 PDF objects out of 1000 (max. 8388607)
  134 named destinations out of 1000 (max. 500000)
