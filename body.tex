@@ -261,24 +261,10 @@ Figure \ref{fig:boxplots} shows the 24h-forecast results on the test set in abso
 \end{figure}
 
 \section{Comparison with existing forecasting models}
-In this section we compare our fusion model CNN on 24 hours forecast with the existing forecasting models: OFCL and BCD5. In addition, we define the baseline prediction as equal to four times the last displacement (from $t-6h$ to $t$). 
-
-Figure \ref{fig:boxplots} shows the 6h-forecast results on the test set in absolute distance error. We define the baseline prediction as equal to the last displacement (from $t-6h$ to $t$). We can see the improvement of fusing networks (mean error $\bar{e}=32.9km$) with respect to the wind field CNN alone ($\bar{e}=40.7km$) or the track neural network alone ($\bar{e}=35km$).
-We have plotted in Figure \ref{fig:track} an example of 6h-forecasts on one storm track for the baseline and for our prediction (fusion networks). Our forecast predicts well, even in the case of change of direction or speed.
+In this section we compare our fusion model CNN on 24 hours forecast with the existing forecasting models: OFCL and BCD5. BCD5 is a statistical model which is often used to benchmark other hurricane track forecasting methods. OFCL is the National Hurricane Center (NHC) official forecast. In general the performance of these models vary per year. With increased computational power, the performance of OFCL is constantly improving. In addition, we define the baseline prediction as equal to four times the last displacement (from $t-6h$ to $t$). 
 
 
-\begin{figure}
-	\begin{center}
-		\epsfxsize=0.50\hsize \epsfbox{figs/storm_track3_new2.pdf}
-	\end{center}
-	\caption{Example of 6h-forecasts on one storm track. The baseline prediction is equal to the last 6h-displacement (going straight).}
-	\label{fig:track}
-\end{figure}
 
-
-If these results are promising, some more long-term predictions are needed for a practical use. Moreover, current forecast models do not provide less than 24h-forecasts, which prevents us from comparing the results. With respect to the existing machine learning studies predicting 6h-forecasts \cite{liberge2011prevision,moradi2016sparse}, we tend to perform better (error larger than 60km for both studies) and on a larger/more diverse dataset. Moreover, if we only look at hurricane time steps (without depressions), our mean prediction error drops to 25.8km. Depressions seem to be more difficult to predict: an explanation can be that they are smaller and more subject to local perturbations.
-
-\section{Result Analysis}
 \subsection{Quantitative}
 
 \subsection{Qualitative}
