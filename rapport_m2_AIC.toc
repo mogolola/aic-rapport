@@ -32,8 +32,10 @@
 \contentsline {section}{\numberline {5.1}Configurations comparison}{18}{section.5.1}
 \contentsline {subsection}{Selecting Stream Network Configuration}{18}{section*.10}
 \contentsline {subsection}{Selecting Fusion Network Configuration}{19}{section*.11}
-\contentsline {section}{\numberline {5.2}Comparison with existing forecasting models}{19}{section.5.2}
-\contentsline {subsection}{Quantitative}{19}{section*.12}
-\contentsline {subsection}{Qualitative}{19}{section*.13}
-\contentsline {chapter}{\chapternumberline {6}Conclusion and Discussion}{21}{chapter.6}
-\contentsline {chapter}{Bibliography}{23}{chapter*.15}
+\contentsline {section}{\numberline {5.2}Comparison with Existing Forecasting Models}{19}{section.5.2}
+\contentsline {subsection}{Quantitative analysis}{20}{section*.12}
+\contentsline {subsection}{Qualitative analysis}{20}{section*.13}
+\contentsline {chapter}{\chapternumberline {6}Future Work and Conclusion}{23}{chapter.6}
+\contentsline {section}{\numberline {6.1}Future Work}{23}{section.6.1}
+\contentsline {section}{\numberline {6.2}Conclusion}{23}{section.6.2}
+\contentsline {chapter}{Bibliography}{25}{chapter*.15}

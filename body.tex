@@ -112,15 +112,16 @@ The configurations we have evaluated for Wind CNN and Pressure CNN are outlined 
 Another important source of information is the previous displacements and the other handcrafted features that we mentioned in the prior part of this chapter. They can be treated as 0D vector. Temporal patterns can be extracted from a storm's historical tracks. Other handcrafted features can also provide additional (and important) clue for prediction. We designed a small neural network (two small fully connected layers, the green stream in Fig.\ref{fig:fusion_arch}) able to learn the future track from this past track and other handcrafted data. The past displacements of a storm are defined as the storm's displacement every 6 hours in history. An important question is how long should we take from a storm's past tracks. We have evaluated the network for the task of predicting storm displacement in 24 hours using different length of past tracks. We finally decided to use two past tracks (the displacement from $t-12h$ to $t-6h$ and $t-6h$ to $t$) because we noted that using longer past tracks doesn't improve the performance significantly. 
 \begin{figure} 
 	\begin{center}
-		\epsfxsize=0.95\hsize \epsfbox{figs/fusion_details.pdf}
+		\epsfxsize=1.0\hsize
+		\epsfbox{figs/fusion_details.pdf}
 	\end{center}
-	\caption{Connection of neurons in fusion layers before training fusion network. }
+	\caption{The connections of neurons in fusion layers. Left: before training (connections retrained from stream networks). Right: after training (fully connected between each layer). }
 	\label{fig:fusion_details}
 \end{figure}
 \section{Fusion Network}
 It is demonstrated that the three network: Wind CNN,  Pressure CNN,  Past tracks + Meta NN can independently predict a storm's future displacement. We then consider improving the performance by integrating the three networks into a fusion network. Once the three individual stream networks are trained, we concatenate their certain number of last layers and add a layer at the end of the network as the fused output layer. An example of fusion network is shown in Fig.\ref{fig:fusion_arch} where the last two layers of each stream networks are concatenated and merged into the fusion network. 
 
-Figure \ref{fig:fusion_details} zooms in the fusion layers and explains how neurons are connected before training the fusion network. After fusing, the connections in previous stream networks(blue, yellow and green) are retained, no connection exists between different streams. The fusion output (red in Figure \ref{fig:fusion_details}) is the average of the three stream networks' outputs. 
+Figure \ref{fig:fusion_details} zooms in the fusion layers and explains how neurons are connected before and after training the fusion network. \textbf{Before training}, we initialized weights in fusion network from the three pre-trained stream networks. The connections as well as the weights in the previous stream networks (blue, yellow and green in Figure \ref{fig:fusion_details}) are retained in the fusion network. Weights that stand for other connections across streams are set to zero. FC-7 (fusion) layer is an additional layer added after the three streams' last layer. The weights of FC-7 (fusion) layer are initialized to let the fusion network output (red in Figure \ref{fig:fusion_details} left part) be equal to the average of the three stream networks' outputs. \textbf{After training}, neurons are fully connected between each layer (see \ref{fig:fusion_details} right part).
 
 We are also interested in different possible configurations of the fusion network. We have carried out a throughout evaluations on the performance of different configurations. Details and results will be shown in the next chapter. 
 
@@ -128,10 +129,10 @@ We are also interested in different possible configurations of the fusion networ
 
 
 \section{Network Training Framework}
-In the previous sections of the chapter, we presented the details of the network configurations. In this section, we describe the algorithmic details of network training.
+In the previous sections of the chapter, we presented the details of the network configurations. In this section, we describe the algorithmic details of the network training.
 
 \subsection{Input preprocessing}
-Following the machine learning standard, we divided the entire dataset into train (60\%) / validation (20\%) / test (20\%). To avoid data leakage, we first separate all the storms into the three bins. Then, within each set, all time instants from the storms were treated independently. It ensures that training examples, validation examples, and test examples are extracted from different storms. Before being fed into the models, the input data is first standardized by subtracting mean value then dividing the standard variation of each layer, computed on the training set, from each pixel. 
+Following the machine learning standard, we divided the entire dataset into train (60\%) / validation (20\%) / test (20\%). To avoid data leakage, we first separate all the storms into the three bins. Then, within each set, all time instants from the storms were treated independently. It ensures that training examples, validation examples, and test examples are extracted from the different storms. Before being fed into the models, the input data is first standardized by subtracting mean value then dividing by the standard variation of each layer, computed on the training set, from each feature. 
 
 \subsection{Training}  
 Let $D = \{(x_w^1, x_p^1, x_{0d}^1, loc_t^1, loc_{t+\delta t}^1), ..., (x_w^n, x_p^n, x_{0d}^n, loc_t^n, loc_{t+\delta t}^n)\}$ be the labeled data for training our fusion network; with $x_w^i$, $x_p^i$, $x_{0d}^i$ denoting wind fields, pressure fields, 0d features respectively and $loc_t^i$, $loc_{t+\delta t}^i$ corresponding to the ground truth location at current time and after $\delta t$ time. $\delta t$ can be 6 hours, 12 hours, 18 hours, 24 hours... depending on the specific forecasting task. We train our model using a two-stage approach.
@@ -139,11 +140,11 @@ Let $D = \{(x_w^1, x_p^1, x_{0d}^1, loc_t^1, loc_{t+\delta t}^1), ..., (x_w^n, x
 
 \begin{enumerate}[leftmargin=2em]
 	\item \textbf{Training the stream networks: }\\
-	We first proceed by training the individual stream networks. For training Wind CNN, Let $F_{wind}$ be the mapping function of Wind CNN. Learning $F_{wind}$ requires the estimation of the network parameters $\theta_w$ which is carried out by minimizing the loss between the forecast storm location and the corresponding ground truth location. The forecast value and ground truth are in latitude and longitude. We first transform their differences in latitude and longitude into the distance in kilometers. Let $F_{transform}$ be the transformation function from differences in latitude and longitude to distance. Then we use Mean Squared Error (MSE) in kilometers as the loss function:
+	We first proceed by training the individual stream networks. For training Wind CNN, let $F_{wind}$ be the mapping function of Wind CNN. Learning $F_{wind}$ requires the estimation of the network parameters $\theta_w$ which is carried out by minimizing the loss between the forecast storm location and the corresponding ground truth location. The forecast value and ground truth are in latitude and longitude. We first transform their differences in latitude and longitude into the distance in kilometers. Let $F_{transform}$ be the transformation function from differences in latitude and longitude to distance. Then we use Mean Squared Error (MSE) in kilometers as the loss function:
 	
 	\begin{equation}
 	\label{eq}
-	L(\theta_w) = \frac{1}{n}\sum_{i=1}^{n} \left \| {F_{transform}((F_{wind}(x_w^i; \theta_w)} + loc_{i\ t} ) - loc_{i\ t+\delta t} ) \right \| ^2
+	L(\theta_w) = \frac{1}{n}\sum_{i=1}^{n} \left \| {F_{transform}((F_{wind}(x_w^i; \theta_w)} + loc^i_{t} ) - loc^i_{t+\delta t} ) \right \| ^2
 	\end{equation}
 	Where n is the total number of instances. Using MSE as the loss function can effectively penalize on large errors. Training the Pressure CNN and Past tracks + meta NN can be performed analogously. After training, the three stream networks can be used to perform separate prediction of each modality. 
 	\item \textbf{Training the fusion network: }\\
@@ -151,13 +152,13 @@ Let $D = \{(x_w^1, x_p^1, x_{0d}^1, loc_t^1, loc_{t+\delta t}^1), ..., (x_w^n, x
 	
 	\begin{equation}
 	\label{eq_fusion_1}
-	L(\theta_{f}) = \frac{1}{n}\sum_{i=1}^{n} \left \| {F_{transform}((F_{f}(x_w^i, x_p^i, x_{0d}^i; \theta_{f})} + loc_{i\ t} ) - loc_{i\ t+\delta t} ) \right \| ^2
+	L(\theta_{f}) = \frac{1}{n}\sum_{i=1}^{n} \left \| {F_{transform}((F_{f}(x_w^i, x_p^i, x_{0d}^i; \theta_{f})} + loc^i_{t} ) - loc^i_{t+\delta t} ) \right \| ^2
 	\end{equation}
 	
 	And second stage's loss function would be:
 	\begin{equation}
 	\label{eq_fusion_2}
-	L(\theta_{f}, \theta_{s}) = \frac{1}{n}\sum_{i=1}^{n} \left \| {F_{transform}((F_{f}(x_w^i, x_p^i, x_{0d}^i; \theta_{f}, \theta_{s})} + loc_{i\ t} ) - loc_{i\ t+\delta t} ) \right \| ^2
+	L(\theta_{f}, \theta_{s}) = \frac{1}{n}\sum_{i=1}^{n} \left \| {F_{transform}((F_{f}(x_w^i, x_p^i, x_{0d}^i; \theta_{f}, \theta_{s})} + loc^i_{t} ) - loc^i_{t+\delta t} ) \right \| ^2
 	\end{equation}
 	
 	 We found that having the two stage of optimization augment the performance compared to optimize everything from the beginning. 
@@ -172,11 +173,11 @@ Let $D = \{(x_w^1, x_p^1, x_{0d}^1, loc_t^1, loc_{t+\delta t}^1), ..., (x_w^n, x
 
 \subsection{Implementation Details}
 
-The training was performed by mini-batch gradient descent with Adam optimizer. The batch size was set to 256. The training was regularized by weight decay (the $L_2$ penalty multiplier set to 0.01). Initial learning rates were fine-tuned individually in each model. The weights of the model were initialized followed by He initialization\cite{he2015delving}. Each model converged within 200 epochs. All sample were permuted after each epoch. Each evaluation was repeated by three times with different randomization and then compute an average score. Our implementation used PyTorch 4.0. All training and evaluation were processed on 2 TitanX GPUs with data parallelism\cite{KRIZHEVSKY2014}. 
+The training was performed by mini-batch gradient descent with Adam optimizer. The batch size was set to 256. The training was regularized by weight decay (the $L_2$ penalty multiplier set to 0.01). Initial learning rates were fine-tuned individually in each model. The weights of the model were initialized followed by He initialization\cite{he2015delving}. Each model converged within 200 epochs. All sample were permuted after each epoch. Each evaluation was repeated by three times with different randomization and then we compute an average score. Our implementation used PyTorch 4.0. All training and evaluation were processed on 2 TitanX GPUs with data parallelism\cite{KRIZHEVSKY2014}. 
 
 
 \chapter{Experiments}
-In this section, we describe important experiments in the research. We first determine the best-performing fusion network setting followed by a two-step manner on the validation set and evaluate it on the test set. Then we compare our fusion network with the existing forecast models under the same criterion. 
+In this section, we describe the main experiments of this work. We first determine the best-performing fusion network setting followed by a two-step manner on the validation set and evaluate it on the test set. Then we compare our fusion network with the existing forecast models under the same criterion. 
 
 \section{Configurations comparison}
 Selecting the fusion network's configuration can be seen as a special hyper-parameter tunning. In the previous chapter, we explained the method of designing the fusion network configuration. In this section, we will describe the related experiments and results. Evaluations about selecting network configurations are processed on validation set since it is part of hyper-parameter tunning. The process can be identified into two steps. Our fusion approach aims at combining the stream networks. In the first step, the stream networks' configurations are determined. In the second step, we explore different fusion strategies and select the fusion network configuration with the best performance. The two steps are described as follows:
@@ -191,7 +192,7 @@ Another experiment is to evaluate how adding more temporal parts to the input da
 	\label{table:arch_evaluation}
 	\begin{tabular}{|c|c|c|}
 		\hline
-		Model(in Table. \ref{table:vgg_archs}) & Mean Sqaure Error (km\^2) & Mean Abosolute Error(km) \\ \hline
+		Model(in Table. \ref{table:vgg_archs}) & Mean Square Error ($km^2$) & Mean Absolute Error($km$) \\ \hline
 		A & 31430.08 & 145.43  \\ \hline
 		B & 31761.95 & 146.62  \\ \hline
 		C & 31552.91 & 145.5997 \\ \hline
@@ -219,7 +220,7 @@ Figure \ref{fig:boxplots} shows the 24h-forecast results on the test set in abso
 	\label{table:fus_compare}
 	\begin{tabular}{|c|c|c|}
 		\hline
-		Model & Mean Sqaure Error($km^2$) & Mean Abosolute Error($km$) \\ \hline
+		Model & Mean Square Error($km^2$) & Mean Absolute Error($km$) \\ \hline
 		Fus network, 3 streams, fuse 2 FC & 25453.48 & 130.04 \\ \hline
 		Fus network, 3 streams, fuse 4 FC & 25628.22 & 130.27 \\ \hline
 		Fus network, 3 streams, fuse 6 FC & 25846.74 & 130.95 \\ \hline
@@ -248,21 +249,62 @@ Figure \ref{fig:boxplots} shows the 24h-forecast results on the test set in abso
 
 \begin{figure}
 	\begin{center}
-		\epsfxsize=0.80\hsize \epsfbox{figs/arch_compare.png}
+		\epsfxsize=0.70\hsize \epsfbox{figs/arch_compare.png}
 	\end{center}
 	\caption{24h-forecast results on the test set (storms coming from all oceanic basins), in distance between predicted and real location.}
 	\label{fig:boxplots}
 \end{figure}
 
-\section{Comparison with existing forecasting models}
-In this section, we compare our fusion model CNN on 24 hours forecast with the existing forecasting models: OFCL and BCD5. BCD5 is a statistical model which is often used to benchmark other hurricane track forecasting methods. OFCL is the National Hurricane Center (NHC) official forecast. In general, the performance of these models varies per year. With increased computational power, the performance of OFCL is constantly improving. In addition, we define the baseline prediction as equal to four times the last displacement (from $t-6h$ to $t$). 
+\section{Comparison with Existing Forecasting Models}
+In this section, we compare our fusion model CNN on 24 hours forecast with the existing forecasting models: OFCL and BCD5. BCD5 is a statistical model which is often used to benchmark other hurricane track forecasting methods. OFCL is the National Hurricane Center (NHC) official forecast. In general, the performance of these models varies per year. With increased computational power, the performance of OFCL is constantly improving \cite{hurricane_models}. We extracted prediction results by the two models OFCL and BCD5 since 1989 in the two basins Atlantic (ATL) and Eastern Pacific (EPAC). We then compared our fusion network performance with the two models on 24 hours of storm track prediction by each year on the test set.
+\subsection{Quantitative analysis}
+ The yearly result is shown in Figure \ref{fig:compare_with_art}. The number of storms and timesteps used to compared is presented in Figure \ref{fig:compare_number}. From the result, we can see that our fusion network behave better than the statistical approach BCD5 in most of the years. Since around 2006, the OFCL model significantly outperforms the BCD5 model as well as our fusion network. It is not surprising since the OCFL model is a consensus that combines multiple statistical and dynamic models. Table \ref{table:conpare_with_art} represents the average storm track forecast errors and standard deviation for all years on the test set for our fusion network and the BCD5 model in the two basins. It is verified that on average our fusion network behaves better than the BCD5 model.   
+\begin{figure}
+	\begin{center}
+		\epsfxsize=1.0\hsize \epsfbox{figs/ATL_comparison_of_models_errors_per_year.pdf}\\
+		\epsfxsize=1.0\hsize
+		\epsfbox{figs/EPAC_comparison_of_models_errors_per_year.pdf}
+	\end{center}
+	\caption{The yearly average 24-hours storm track forecasting errors(km) and standard deviation on the test set (top figure for storms in Atlantic, bottom figure for storms in East Pacific) for our fusion network forecasts(blue), the BCD5 model forecasts (green) and the official NHC forecasts (red), 1989-2016.}
+	\label{fig:compare_with_art}
+\end{figure}
 
+\begin{figure}
+	\begin{center}
+		\epsfxsize=0.9\hsize 
+		\epsfbox{figs/ATL_comparison_of_numstorms_per_year.pdf}\\
+		\epsfxsize=0.9\hsize
+		\epsfbox{figs/EPAC_comparison_of_numstorms_per_year.pdf}
+	\end{center}
+	\caption{Number of storms and timesteps used to compare in the two basins (Atlantic and East Pacific) in each year, 1989-2016.}
+	\label{fig:compare_number}
+\end{figure}
 
+\begin{table}[]
+	\centering
+	\caption{Mean storm track forecast errors of all years in the two basins (Atlantic and Pacific) on the test set for our fusion network and BCD5 model}
+	\label{table:conpare_with_art}
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			\multirow{2}{*}{Model} & \multicolumn{2}{c|}{Atlantic} & \multicolumn{2}{c|}{East Pacific} \\ \cline{2-5} 
+			& Mean forecast errors(km) & Standard deviation & Mean forecast errors(km) & Standard deviation \\ \hline
+			BCD5 & 124.99 & 90.06 & 112.36 & 78.46 \\ \hline
+			Our fusion network & 114.93 & 69.95 & 94.03 & 58.77 \\ \hline
+		\end{tabular}%
+	}
+\end{table}
 
-\subsection{Quantitative}
-
-\subsection{Qualitative}
-
+\subsection{Qualitative analysis}
+To compare more details with the three models' forecast, we visualized the three models' forecast errors on tropical storm Ian which hit the south-east coast of the United States on Sept. 2016. It is visualized in Figure \ref{fig:compare_quantitative}. The small bars connected each pair of predicted location and ground truth location (after 24 hours), and their length can indicate the forecast errors. We can see from the figure that even though the OFCL model mostly has smaller forecast errors compared to our fusion network, but there also exist some time points where our model forecast outperform the OFCL model. In some cases, the three models all have large errors, but the forecast errors are located in different directions from the ground truth locations. These results are promising, which shows that our model can help to enhance the official forecast, even its forecast errors are way larger than the OFCL model.  
+\begin{figure}
+	\begin{center}
+		\epsfxsize=1.0\hsize 
+		\epsfbox{figs/one_stom_result.png}
+	\end{center}
+	\caption{The forecast errors of the three models (left: the OCFL, middle: the BCD5, right: our fusion network) on the Hurricane Ian in 2016}
+	\label{fig:compare_quantitative}
+\end{figure}
 
 %%% Local Variables: 
 %%% mode: latex

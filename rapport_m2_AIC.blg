@@ -1,15 +1,15 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: rapport_m2_AIC.aux
 The style file: plain.bst
 Database file #1: rapportM2R.bib
-Repeated entry---line 257 of file rapportM2R.bib
+Repeated entry---line 263 of file rapportM2R.bib
  : @inproceedings{sutskever2014sequence
  :                                     ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 288 of file rapportM2R.bib
+Repeated entry---line 294 of file rapportM2R.bib
  : @inproceedings{xingjian2015convolutional
  :                                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 351 of file rapportM2R.bib
+Repeated entry---line 357 of file rapportM2R.bib
  : @article{simonyan2014very
  :                          ,
 I'm skipping whatever remains of this entry
@@ -23,4 +23,5 @@ Warning--to sort, need author or key in hurricane_energy
 Warning--to sort, need author or key in nhc_models
 Warning--to sort, need author or key in katrina_track
 Warning--to sort, need author or key in Reanalysis
+Warning--to sort, need author or key in hurricane_models
 (There were 3 error messages)

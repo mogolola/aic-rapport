@@ -19,13 +19,18 @@
 %% except that this permission notice may be stated in a translation
 %% approved by the Free Software Foundation
 %%  
-\chapter{Conclusion and Discussion}
+\chapter{Future Work and Conclusion}
+\section{Future Work}
+In this work, we trained an end-to-end fusion network that can learn to fuse information from different sources of data. The fusion network bases on three pre-trained networks: 2 CNN that learn information from atmospheric fields data and 1 NN that learns from past tracks and some metadata. We suppose to let the neural networks learn spatiotemporal structure from the sequences of data. The data can have higher dimensions, and time can become the fourth dimension other than spatial dimensions (x, y, z). Ideally, we would like to design an algorithm that could effectively learn information from high-dimensional tensor data. 
 
-We showed a promising deep learning framework for storm track forecasting. We demonstrated the benefit of coupling four types of data (wind fields, pressure fields, past tracks and other hand crafted data) in an efficient fusion model. 
+In the previous, we mentioned that a shallow convolutional network could predict as well as a deep convolutional neural network for future storm tracks. Advances in deep learning for lots of computer vision tasks show promises in using a large dataset, such as ImageNet which contains millions of images to train very deep neural networks. For us, we have collected as much data as we can, but the data can still be insufficient. On the one hand, we can try data augmentation techniques (flipping the images for example) to increase the number of training examples. On the other hand, we can try unsupervised learning algorithms. For example, we can use clustering algorithms to identify similar storms and predict a storm's behavior based on other most similar known storms.
 
-...
+Multi-target learning is a kind of task where one wants to predict several variables that are dependent. Multi-target learning can predict. A survey showed that compared the single output methods, multi-target learning methods tend to have better predictive performance. Multi-output regression methods provide as well the means to effectively model the multi-output datasets by considering not only the underlying relationships between the features and the corresponding targets but also the relationships between the targets. It provides a promising clue for our future research. If we apply multi-target learning into our storm track forecast, intuitively, we guess that learning to predict short-term storm future displacement can have a positive impact on predicting long-term storm future displacement, and vice versa. Apply multi-target learning is promising in improving the forecast in different time periods.
 
-We think that the use of such deep learning methods can help the current forecast modellers by providing a complementary prediction that could be integrated in some consensus methods.
+\section{Conclusion}
+In this work, we proposed a promising deep learning framework for storm track forecasting. We demonstrated the benefit of coupling four types of data (wind fields, pressure fields, past tracks and other handcrafted data) in an efficient fusion model. We showed clear insights into our fusion network and its implementation details. Finally, we have compared our fusion model with a statistical forecast model BCD5 and the NHC's official forecast (OFCL). Quantitative and qualitative analysis of the results showed that our model outperforms the BCD5 model. Although our model doesn't beat the OFCL, We think that the use of such deep learning methods can help the current forecast modelers by providing a complementary prediction that could be integrated into some consensus methods.
+
+
 
 %%% Local Variables: 
 %%% mode: latex
