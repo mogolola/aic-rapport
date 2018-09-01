@@ -255,7 +255,7 @@ Figure \ref{fig:boxplots} shows the 24h-forecast results on the test set in abso
 	\label{fig:boxplots}
 \end{figure}
 
-\section{Comparison with Existing Forecasting Models}
+\section{Comparison with the Existing Forecasting Models}
 In this section, we compare our fusion model CNN on 24 hours forecast with the existing forecasting models: OFCL and BCD5. BCD5 is a statistical model which is often used to benchmark other storm track forecasting methods. OFCL is the National Hurricane Center (NHC) official forecast. In general, the performance of these models varies per year. With increased computational power, the performance of OFCL is constantly improving \cite{hurricane_models}. We extracted prediction results by the two models OFCL and BCD5 since 1989 in the two basins Atlantic (ATL) and Eastern Pacific (EPAC). We then compared our fusion network performance with the two models on 24 hours of storm track prediction by each year on the test set.
 \subsection{Quantitative analysis}
  The yearly result is shown in Figure \ref{fig:compare_with_art}. The number of storms and timesteps used to compared is presented in Figure \ref{fig:compare_number}. From the result, we can see that our fusion network behaved better than the statistical approach BCD5 in most of the years. Since around 2006, the OFCL model significantly outperforms the BCD5 model as well as our fusion network. Table \ref{table:conpare_with_art} represents the average storm track forecast errors and standard deviation for all years on the test set for our fusion network and the BCD5 model in the two basins. It is verified that on average our fusion network behaves better than the BCD5 model.   

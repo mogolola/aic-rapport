@@ -32,7 +32,7 @@
 \contentsline {section}{\numberline {5.1}Configurations comparison}{18}{section.5.1}
 \contentsline {subsection}{Selecting Stream Network Configuration}{18}{section*.10}
 \contentsline {subsection}{Selecting Fusion Network Configuration}{19}{section*.11}
-\contentsline {section}{\numberline {5.2}Comparison with Existing Forecasting Models}{19}{section.5.2}
+\contentsline {section}{\numberline {5.2}Comparison with the Existing Forecasting Models}{19}{section.5.2}
 \contentsline {subsection}{Quantitative analysis}{20}{section*.12}
 \contentsline {subsection}{Qualitative analysis}{20}{section*.13}
 \contentsline {chapter}{\chapternumberline {6}Future Work and Conclusion}{23}{chapter.6}
