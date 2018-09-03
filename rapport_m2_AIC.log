@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.8.10)  2 SEP 2018 18:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.8.10)  3 SEP 2018 06:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1463,7 +1463,7 @@ PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 <figs/fusion_network.pdf, id=371, 963.6pt x 542.025pt>
 File: figs/fusion_network.pdf Graphic file (type pdf)
 <use figs/fusion_network.pdf>
-Package pdftex.def Info: figs/fusion_network.pdf  used on input line 63.
+Package pdftex.def Info: figs/fusion_network.pdf  used on input line 62.
 (pdftex.def)             Requested size: 405.45045pt x 228.06247pt.
 [12]
 
@@ -1472,41 +1472,41 @@ PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 <figs/fusion_details.pdf, id=389, 963.6pt x 341.35529pt>
 File: figs/fusion_details.pdf Graphic file (type pdf)
 <use figs/fusion_details.pdf>
-Package pdftex.def Info: figs/fusion_details.pdf  used on input line 116.
+Package pdftex.def Info: figs/fusion_details.pdf  used on input line 115.
 (pdftex.def)             Requested size: 426.79134pt x 151.18642pt.
 [13pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
 }) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.121 \section
+l.120 \section
               {Fusion Network} <./figs/fusion_network.pdf>] [14pdfTeX warning (
 ext4): destination with the same identifier (name{table.4.1}) has been already 
 used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.124 F
+l.123 F
        igure \ref{fig:fusion_details} zooms in the fusion layers and explain...
 pdfTeX warning (ext4): destination with the same identifier (name{table.4.2}) h
 as been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.124 F
+l.123 F
        igure \ref{fig:fusion_details} zooms in the fusion layers and explain...
 ] [15pdfTeX warning (ext4): destination with the same identifier (name{figure.4
 .3}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.139 
+l.138 
        <./figs/fusion_details.pdf>] [16] [17]
 
-Package xcolor Warning: Incompatible color definition on input line 179.
+Package xcolor Warning: Incompatible color definition on input line 178.
 
 
-Package xcolor Warning: Incompatible color definition on input line 179.
+Package xcolor Warning: Incompatible color definition on input line 178.
 
 [18
 
@@ -1515,21 +1515,21 @@ as been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.209 
+l.208 
       ]
-Overfull \hbox (59.7872pt too wide) in paragraph at lines 221--229
+Overfull \hbox (59.7872pt too wide) in paragraph at lines 220--228
  [][] 
  []
 
 
-Overfull \hbox (11.95334pt too wide) in paragraph at lines 236--248
+Overfull \hbox (11.95334pt too wide) in paragraph at lines 235--247
  [][] 
  []
 
 <figs/arch_compare.png, id=592, 732.93825pt x 451.6875pt>
 File: figs/arch_compare.png Graphic file (type png)
 <use figs/arch_compare.png>
-Package pdftex.def Info: figs/arch_compare.png  used on input line 252.
+Package pdftex.def Info: figs/arch_compare.png  used on input line 251.
 (pdftex.def)             Requested size: 298.75262pt x 184.11789pt.
 <figs/ATL_comparison_of_models_errors_per_year.pdf, id=597, 2168.1pt x 867.24pt
 >
@@ -1537,7 +1537,7 @@ File: figs/ATL_comparison_of_models_errors_per_year.pdf Graphic file (type pdf)
 
 <use figs/ATL_comparison_of_models_errors_per_year.pdf>
 Package pdftex.def Info: figs/ATL_comparison_of_models_errors_per_year.pdf  use
-d on input line 264.
+d on input line 263.
 (pdftex.def)             Requested size: 426.79134pt x 170.70569pt.
 <figs/EPAC_comparison_of_models_errors_per_year.pdf, id=598, 2168.1pt x 867.24p
 t>
@@ -1545,37 +1545,37 @@ File: figs/EPAC_comparison_of_models_errors_per_year.pdf Graphic file (type pdf
 )
 <use figs/EPAC_comparison_of_models_errors_per_year.pdf>
 Package pdftex.def Info: figs/EPAC_comparison_of_models_errors_per_year.pdf  us
-ed on input line 266.
+ed on input line 265.
 (pdftex.def)             Requested size: 426.79134pt x 170.70569pt.
 [19pdfTeX warning (ext4): destination with the same identifier (name{table.5.2}
 ) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.271 
+l.270 
       pdfTeX warning (ext4): destination with the same identifier (name{table.5
 .3}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.271 
+l.270 
       ]
 <figs/ATL_comparison_of_numstorms_per_year.pdf, id=608, 2168.1pt x 867.24pt>
 File: figs/ATL_comparison_of_numstorms_per_year.pdf Graphic file (type pdf)
 <use figs/ATL_comparison_of_numstorms_per_year.pdf>
 Package pdftex.def Info: figs/ATL_comparison_of_numstorms_per_year.pdf  used on
- input line 275.
+ input line 274.
 (pdftex.def)             Requested size: 384.10959pt x 153.63513pt.
 <figs/EPAC_comparison_of_numstorms_per_year.pdf, id=609, 2168.1pt x 867.24pt>
 File: figs/EPAC_comparison_of_numstorms_per_year.pdf Graphic file (type pdf)
 <use figs/EPAC_comparison_of_numstorms_per_year.pdf>
 Package pdftex.def Info: figs/EPAC_comparison_of_numstorms_per_year.pdf  used o
-n input line 277.
+n input line 276.
 (pdftex.def)             Requested size: 384.10959pt x 153.63513pt.
 <figs/one_stom_result.png, id=611, 722.7pt x 268.1217pt>
 File: figs/one_stom_result.png Graphic file (type png)
 <use figs/one_stom_result.png>
-Package pdftex.def Info: figs/one_stom_result.png  used on input line 303.
+Package pdftex.def Info: figs/one_stom_result.png  used on input line 302.
 (pdftex.def)             Requested size: 426.79134pt x 158.3418pt.
 ) (./conclu.tex [20pdfTeX warning (ext4): destination with the same identifier 
 (name{figure.5.1}) has been already used, duplicate ignored
@@ -1678,7 +1678,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 188.
 Here is how much of TeX's memory you used:
  25785 strings out of 492649
  483542 string characters out of 6129622
- 744709 words of memory out of 5000000
+ 744708 words of memory out of 5000000
  28898 multiletter control sequences out of 15000+600000
  70460 words of font info for 113 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191

@@ -46,8 +46,7 @@ In the research, we use storm track data and reanalysis to predict hurricane's t
 	
 	\item \textbf{Displacement in history} A storm's future displacement can be predicted from his historical displacement in a statistical approach.
 	
-	\item \textbf{Other hand-crafted features.}
-	Other useful features we extracted from a storm are: \textbf{current latitude and longitude}, \textbf{current windspeed} at the center of the storm, \textbf{Jday predictor}(Gaussian function of "Julian day of storm init - peak day of the hurricane season"\cite{demaria2005further}), and \textbf{current distance to land}. We call them meta data.
+	\item \textbf{Other hand-crafted features.} Other useful features we extracted from a storm are: \textbf{current latitude and longitude}, \textbf{current windspeed} at the center of the storm, \textbf{Jday predictor}(Gaussian function of "Julian day of storm init - peak day of the hurricane season"\cite{demaria2005further}), and \textbf{current distance to land}. We call them meta data.
 \end{enumerate}
 
  Another reason why we focused on the wind and geopotential parameters is that we applied a sparse feature selection technique (Automatic Relevance Determination, based on linear regression) over all available reanalysis fields, which highlighted the usefulness of wind and pressure.
